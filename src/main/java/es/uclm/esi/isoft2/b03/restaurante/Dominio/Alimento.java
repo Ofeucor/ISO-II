@@ -4,7 +4,18 @@ public class Alimento {
 
 	private int idAlimento;
 	private String nombre;
-	private float precio;
+	private double precio;
+	
+	/**
+	 * @param idAlimento
+	 * @param nombre
+	 * @param precio
+	 */
+
+	public Alimento(String nombre, double precio) {
+		this.nombre = nombre;
+		this.precio = precio;
+	}
 
 	public int getIdAlimento() {
 		return this.idAlimento;
@@ -14,7 +25,7 @@ public class Alimento {
 		return this.nombre;
 	}
 
-	public float getPrecio() {
+	public double getPrecio() {
 		return this.precio;
 	}
 
