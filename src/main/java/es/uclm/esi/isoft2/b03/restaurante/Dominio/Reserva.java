@@ -1,14 +1,15 @@
+package es.uclm.esi.isoft2.b03.restaurante.Dominio;
 public class Reserva {
 
-	private string fecha;
+	private String fecha;
 	private String hora;
-	private string datosCliente;
+	private String datosCliente;
 
-	public string getFecha() {
+	public String getFecha() {
 		return this.fecha;
 	}
 
-	public void setFecha(string fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
@@ -20,11 +21,11 @@ public class Reserva {
 		this.hora = hora;
 	}
 
-	public string getDatosCliente() {
+	public String getDatosCliente() {
 		return this.datosCliente;
 	}
 
-	public void setDatosCliente(string datosCliente) {
+	public void setDatosCliente(String datosCliente) {
 		this.datosCliente = datosCliente;
 	}
 

@@ -1,15 +1,15 @@
-package Dominio;
+package es.uclm.esi.isoft2.b03.restaurante.Dominio;
 
 public class JefeSala extends Persona {
 
 	/**
 	 * 
-	 * @param fecha Este string debe tener un formato date()
-	 * @param hora Este string debe tener un formato time()
+	 * @param fecha Este String debe tener un formato date()
+	 * @param hora Este String debe tener un formato time()
 	 * @param datosCliente
 	 * @param mesa
 	 */
-	public Reserva realizarReserva(string fecha, string hora, string datosCliente, Mesa mesa) {
+	public Reserva realizarReserva(String fecha, String hora, String datosCliente, Mesa mesa) {
 		// TODO - implement JefeSala.realizarReserva
 		throw new UnsupportedOperationException();
 	}
@@ -38,7 +38,7 @@ public class JefeSala extends Persona {
 	 * 
 	 * @param date
 	 */
-	public Reserva[] getReservas(string date) {
+	public Reserva[] getReservas(String date) {
 		// TODO - implement JefeSala.getReservas
 		throw new UnsupportedOperationException();
 	}

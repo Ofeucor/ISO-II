@@ -1,33 +1,33 @@
-package Dominio;
+package es.uclm.esi.isoft2.b03.restaurante.Dominio;
 
 public class Persona {
 
-	private string dni;
-	private string nombre;
-	private string apellidos;
+	private String dni;
+	private String nombre;
+	private String apellidos;
 	private int idRestaurante;
 
-	public string getDni() {
+	public String getDni() {
 		return this.dni;
 	}
 
-	public void setDni(string dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 
-	public string getNombre() {
+	public String getNombre() {
 		return this.nombre;
 	}
 
-	public void setNombre(string nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	public string getApellidos() {
+	public String getApellidos() {
 		return this.apellidos;
 	}
 
-	public void setApellidos(string apellidos) {
+	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
 
@@ -36,7 +36,7 @@ public class Persona {
 	 * @param Mesa
 	 * @param Estado
 	 */
-	public void cambiarEstadoMesa(Mesa Mesa, string Estado) {
+	public void cambiarEstadoMesa(Mesa Mesa, String Estado) {
 		// TODO - implement Persona.cambiarEstadoMesa
 		throw new UnsupportedOperationException();
 	}

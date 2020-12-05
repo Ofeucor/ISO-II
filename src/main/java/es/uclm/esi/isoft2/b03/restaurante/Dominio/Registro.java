@@ -1,21 +1,21 @@
-package Dominio;
+package es.uclm.esi.isoft2.b03.restaurante.Dominio;
 
 public class Registro {
 
 	private int idMesa;
 	private int idCamarero;
 	/**
-	 * Este string es de tipo time()
+	 * Este String es de tipo time()
 	 */
-	private string horaInicio;
+	private String horaInicio;
 	/**
-	 * Este string es de tipo time()
+	 * Este String es de tipo time()
 	 */
-	private string horaFin;
-	private string estado;
+	private String horaFin;
+	private String estado;
 	/**
-	 * Este string es de tipo Date()
+	 * Este String es de tipo Date()
 	 */
-	private string fecha;
+	private String fecha;
 
 }

@@ -1,16 +1,16 @@
-package Dominio;
+package es.uclm.esi.isoft2.b03.restaurante.Dominio;
 
 public class Ingrediente {
 
 	private int idIngrediente;
-	private string nombre;
+	private String nombre;
 	private float cantidad;
 
 	public int getIdIngrediente() {
 		return this.idIngrediente;
 	}
 
-	public string getNombre() {
+	public String getNombre() {
 		return this.nombre;
 	}
 

@@ -1,6 +1,5 @@
-package Persistencia;
-
-import Dominio.*;
+package es.uclm.esi.isoft2.b03.restaurante.Persistencia;
+import es.uclm.esi.isoft2.b03.restaurante.Dominio.*;
 
 public class PersonaDAO {
 
@@ -9,7 +8,7 @@ public class PersonaDAO {
 	 * @param dni
 	 * @param password
 	 */
-	public Persona autenticarse(string dni, string password) {
+	public Persona autenticarse(String dni, String password) {
 		// TODO - implement PersonaDAO.autenticarse
 		throw new UnsupportedOperationException();
 	}

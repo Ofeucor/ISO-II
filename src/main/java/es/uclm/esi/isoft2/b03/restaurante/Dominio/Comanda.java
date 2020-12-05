@@ -1,19 +1,20 @@
+package es.uclm.esi.isoft2.b03.restaurante.Dominio;
 public class Comanda {
 
 	private int idComanda;
-	private string fecha;
-	private string hora;
+	private String fecha;
+	private String hora;
 	private boolean estaPreparada = false;
 
 	public int getIdComanda() {
 		return this.idComanda;
 	}
 
-	public string getFecha() {
+	public String getFecha() {
 		return this.fecha;
 	}
 
-	public string getHora() {
+	public String getHora() {
 		return this.hora;
 	}
 

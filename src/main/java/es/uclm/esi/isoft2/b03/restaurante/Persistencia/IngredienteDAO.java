@@ -1,6 +1,6 @@
-package Persistencia;
+package es.uclm.esi.isoft2.b03.restaurante.Persistencia;
 
-import Dominio.*;
+import es.uclm.esi.isoft2.b03.restaurante.Dominio.*;
 
 public class IngredienteDAO {
 
