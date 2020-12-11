@@ -74,7 +74,7 @@ public class IngredienteDAO {
 			in.close();
 
 			// print result
-			System.out.println(response.toString());
+			//System.out.println(response.toString());
 
 					StringTokenizer st = new StringTokenizer(response.toString(), "]");
 

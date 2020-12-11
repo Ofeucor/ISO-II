@@ -19,7 +19,7 @@ public class PlatoDAO {
 	 * @author David Gutiérrez
 	 *************************************************************************************/
 	public static void getMenu() throws IOException {
-		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetPlatos.php");
+		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetAlimento.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 		con.setRequestMethod("GET");
 		con.setRequestProperty("User-Agent", "Mozilla/5.0");
@@ -51,7 +51,7 @@ public class PlatoDAO {
 	 * @author Andrés González
 	 *************************************************************************************/
 	public static void insertPlato(Plato plato) throws IOException {
-		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpInsertPlato.php");
+		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpInsertAlimento.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 		con.setRequestMethod("POST");
 		con.setRequestProperty("User-Agent", "Mozilla/5.0");
@@ -78,7 +78,7 @@ public class PlatoDAO {
 			in.close();
 
 			// print result
-			System.out.println(response.toString());
+			//System.out.println(response.toString());
 
 		} else {
 			System.out.println("NO FUNCIONÓ");
@@ -128,7 +128,7 @@ public class PlatoDAO {
 			in.close();
 
 			// print result
-			System.out.println(response.toString());
+			//System.out.println(response.toString());
 
 			ArrayList<Ingrediente> array = new ArrayList<Ingrediente>();
 			StringTokenizer st = new StringTokenizer(response.toString(), "]");
@@ -137,8 +137,9 @@ public class PlatoDAO {
 				while (st.hasMoreTokens()) {
 					array.add(stringToIngrediente(st.nextToken().replace("[", "").replace(",", " ")));
 				}
-			for (Ingrediente f : array)
-				System.out.println(f.toString());
+			/*for (Ingrediente f : array)
+				System.out.println(f.toString());*/
+			
 			return array;
 		} else {
 			System.out.println("NO FUNCIONÓ");
@@ -168,5 +169,24 @@ public class PlatoDAO {
 			e.printStackTrace();
 		}
 		return ingrediente;
+	}
+	
+	public static Alimento stringToAlimento(String r) {
+		StringTokenizer st = new StringTokenizer(r, " ");
+		Alimento alimento = null;
+
+		try {
+			int idAlimento = Integer.parseInt(st.nextToken().replace("\"", ""));
+			String nombre = st.nextToken().replace("\"", "");
+			float precioAlimento = Float.parseFloat(st.nextToken().replace("\"", ""));
+			String tipo = st.nextToken().replace("\"", "");
+
+			return new Alimento(idAlimento, nombre, precioAlimento, tipo);			
+
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return alimento;
 	}
 }
