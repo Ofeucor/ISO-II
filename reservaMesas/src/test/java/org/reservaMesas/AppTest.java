@@ -1,4 +1,4 @@
-package es.uclm.esi.isoft2.b03.restaurante;
+package org.reservaMesas;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
