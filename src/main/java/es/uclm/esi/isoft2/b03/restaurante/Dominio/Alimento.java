@@ -16,6 +16,12 @@ public class Alimento {
 		this.nombre = nombre;
 		this.precio = precio;
 	}
+	
+	public Alimento(int idAlimento, String nombre, double precio) {
+		this.idAlimento = idAlimento;
+		this.nombre = nombre;
+		this.precio = precio;
+	}
 
 	public int getIdAlimento() {
 		return this.idAlimento;

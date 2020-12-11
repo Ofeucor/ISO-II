@@ -14,7 +14,12 @@ public class Plato extends Alimento {
 		super(nombre, precio);
 		this.tipo = tipo;
 	}
-
+	
+	public Plato(int idPlato, String nombre, double precio, String tipo) {
+		super(idPlato, nombre, precio);
+		this.tipo = tipo;
+	}
+	
 	public String getTipo() {
 		return this.tipo;
 	}
