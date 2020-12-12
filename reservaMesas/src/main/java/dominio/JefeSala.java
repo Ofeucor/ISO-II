@@ -3,6 +3,11 @@ package dominio;
 import java.util.Date;
 
 public class JefeSala extends Persona {
+	
+	public JefeSala(String dni, String nombre, String apellidos, int idRestaurante) {
+		super(dni, nombre, apellidos, idRestaurante);
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * 
@@ -10,6 +15,7 @@ public class JefeSala extends Persona {
 	 * @param datosCliente
 	 * @param mesa
 	 */
+	
 	public Reserva realizarReserva(Date fecha, String datosCliente, Mesa mesa) {
 		// TODO - implement JefeSala.realizarReserva
 		throw new UnsupportedOperationException();
