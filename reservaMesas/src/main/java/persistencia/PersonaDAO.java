@@ -17,7 +17,7 @@ public class PersonaDAO {
 	 * @param dni
 	 * @param password
 	 */
-	public static Persona autenticarse(String dni, String password) throws IOException {
+	public static Object autenticarse(String dni, String password) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phplogin.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 		con.setRequestMethod("POST");
@@ -99,11 +99,10 @@ public class PersonaDAO {
 	 * @param dni
 	 */
 	public void deletePersona(int dni) {
-		// TODO - implement PersonaDAO.deletePersona
-		throw new UnsupportedOperationException();
+		
 	}
 
-	public static Persona stringToPersona(String r) {
+	public static Object stringToPersona(String r) {
 		StringTokenizer st = new StringTokenizer(r, " ");
 		Persona persona = null;
 

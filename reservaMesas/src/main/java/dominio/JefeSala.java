@@ -1,6 +1,9 @@
 package dominio;
 
+import java.io.IOException;
 import java.util.Date;
+
+import persistencia.ReservaDAO;
 
 public class JefeSala extends Persona {
 	
@@ -14,11 +17,13 @@ public class JefeSala extends Persona {
 	 * @param fecha (tipo date())
 	 * @param datosCliente
 	 * @param mesa
+	 * @throws IOException 
 	 */
 	
-	public Reserva realizarReserva(Date fecha, String datosCliente, Mesa mesa) {
-		// TODO - implement JefeSala.realizarReserva
-		throw new UnsupportedOperationException();
+	public Reserva realizarReserva(Date fecha, String datosCliente, Mesa mesa, int idRestaurante) throws IOException {
+		Reserva reserva1 = new Reserva(fecha, "Julio6Personas", mesa);
+		ReservaDAO.insertReserva(reserva1, idRestaurante);
+		return null;
 	}
 
 	public void asignarMesa() {

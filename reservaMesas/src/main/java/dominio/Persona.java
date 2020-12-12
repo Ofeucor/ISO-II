@@ -69,23 +69,22 @@ public class Persona {
 		}
 	}
 
-	public Persona autenticarPersona(String dni, String password) {
+	/*public Persona autenticarPersona(String dni, String password) {
 		Persona p1 = null;
 		try {
-			p1 = PersonaDAO.autenticarse(dni, password);
+			//p1 = PersonaDAO.autenticarse(dni, password);
 			
 			this.dni = dni;
 			this.nombre = p1.getNombre();
 			this.apellidos = p1.getApellidos();
 			this.idRestaurante = p1.getIdRestaurante();
 			
-			return p1;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
-	}
+		return p1;
+	}*/
 
 	/**
 	 * 

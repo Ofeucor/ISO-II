@@ -6,6 +6,8 @@ public class Mesa {
 	private int numSillas;
 	private int estado = 0;
 	private float precio;
+	
+	public Mesa() {};
 
 	public int getIdMesa() {
 		return this.idMesa;
