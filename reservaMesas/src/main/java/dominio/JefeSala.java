@@ -57,9 +57,22 @@ public class JefeSala extends Persona {
 		throw new UnsupportedOperationException();
 	}
 
-	public Mesa[] getMesas() {
-		// TODO - implement JefeSala.getMesas
-		throw new UnsupportedOperationException();
+	public void getMesas() {
+		try {
+			for(Mesa m : MesaDAO.getMesas(getIdRestaurante()))
+				System.out.println(m.toString());;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void getMesasLibres() {
+		try {
+			for(Mesa m : MesaDAO.getMesasLibres(getIdRestaurante()))
+				System.out.println(m.toString());;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public Camarero[] getCamareros() {
@@ -71,9 +84,28 @@ public class JefeSala extends Persona {
 	 * 
 	 * @param date
 	 */
-	public Reserva[] getReservas(String date) {
-		// TODO - implement JefeSala.getReservas
-		throw new UnsupportedOperationException();
+	public ArrayList<Reserva> getReservas() {
+		ArrayList<Reserva> reservas = null;
+		try {
+			reservas = ReservaDAO.getReservas(getIdRestaurante());
+			for(Reserva m : reservas)
+				System.out.println(m.toString());;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return reservas;
 	}
+	
+	/*public ArrayList<Reserva> getReservasFromDate(String date) {
+		ArrayList<Reserva> reservas = null;
+		try {
+			reservas = ReservaDAO.getReservasDate(getIdRestaurante());
+			for(Reserva m : reservas)
+				System.out.println(m.toString());;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return reservas;
+	}*/
 
 }
