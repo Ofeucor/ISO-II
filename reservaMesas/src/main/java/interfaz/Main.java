@@ -13,7 +13,7 @@ public class Main {
 	public final static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		String dni, password;
+String dni, password;
 
 		System.out.println(new Date());
 		System.out.println("Dime tu DNI:");
@@ -27,10 +27,12 @@ public class Main {
 		try {
 			o = PersonaDAO.autenticarse(dni, password);
 			JefeSala p1 = (JefeSala) o;
-			Mesa m1 = new Mesa();
-			Date fecha1 = new Date();
-			p1.realizarReserva(fecha1,"Julio5Personas", m1, 1);
-			System.out.println("Aqui");
+			p1.asignarMesa();
+			//Date fecha1 = new Date();
+			//p1.realizarReserva(fecha1,"Julio5Personas", 1);
+
+			
+
 			if(o.getClass().getName().equals(JefeSala.class.getClass().getName())) {
 				//JefeSala p1 = (JefeSala) o;
 				//p1.realizarReserva(new Date(), "Julio5Personas", null, 1);

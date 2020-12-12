@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import dominio.*;
@@ -27,12 +29,9 @@ public class ReservaDAO {
 
 		OutputStream directConnection = con.getOutputStream();
 		
-		System.out.println(reserva.getFecha());
-		Date fecha = reserva.getFecha();
-		String cliente = reserva.getDatosCliente();
-		int mesa = 2;
+		Date fecha=reserva.getFecha();
 
-		directConnection.write(("Fecha=" + fecha + "&Cliente=" + cliente + "&idRestaurante=" + idRestaurante + "&idMesa=" +mesa)
+		directConnection.write(("Fecha=" + fecha + "&Cliente=" + reserva.getDatosCliente() + "&idRestaurante=" + idRestaurante + "&idMesa=" + 2)
 								.getBytes());
 		directConnection.flush();
 		directConnection.close();

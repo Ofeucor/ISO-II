@@ -6,17 +6,15 @@ public class Reserva {
 
 	private Date fecha;
 	private String datosCliente;
-	private Mesa mesa;
 
 	/**
 	 * @param fecha
 	 * @param datosCliente
 	 * @param idRestaurante 
 	 */
-	public Reserva(Date fecha, String datosCliente, Mesa mesa) {
+	public Reserva(Date fecha, String datosCliente) {
 		this.fecha = fecha;
 		this.datosCliente = datosCliente;
-		this.mesa = mesa;
 	}
 
 	public Date getFecha() {
