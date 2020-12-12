@@ -21,6 +21,18 @@ public class Main {
 
 		System.out.println("Dime tu contraseña:");
 		password = sc.next();
+		
+		/*try {
+			PersonaDAO.insertPersona(new Camarero("00000003B", "Pablo", "Peco", 1));
+			PersonaDAO.insertPersona(new Camarero("00000004B", "Lucia", "Diaz", 1));
+			PersonaDAO.insertPersona(new Camarero("00000005B", "Ana", "Parras", 2));
+			PersonaDAO.insertPersona(new Camarero("00000006B", "losif", "Stalin", 1));
+			PersonaDAO.insertPersona(new Camarero("00000007B", "Juan", "Smith", 2));
+			
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}*/
 
 		/*//Para tener mesas
 		 * for (int j=0; j < 2;j ++)
@@ -33,10 +45,12 @@ public class Main {
 			//[["Manuel","LopezMartin","00000001A","JefeSala","LopezMartin00000001A","1"]]
 			o = PersonaDAO.autenticarse(dni, password);
 			JefeSala p1 = (JefeSala) o;
-			//p1.asignarMesa();
-			p1.getReservas();
-			p1.getMesas();
-			p1.getMesasLibres();
+			
+			p1.getCamareros();
+			//p1.asignarMesa(1,2);
+			//p1.getReservas();
+			//p1.getMesas();
+			//p1.getMesasLibres();
 			
 			/*Date fecha1 = new Date();
 			p1.realizarReserva(fecha1,"Julio5Personas", 1);*/

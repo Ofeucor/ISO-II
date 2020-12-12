@@ -7,4 +7,13 @@ public class Camarero extends Persona {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String toString() {
+		return "Camarero [getDni()=" + getDni() + ", getNombre()=" + getNombre() + ", getApellidos()=" + getApellidos()
+				+ ", getIdRestaurante()=" + getIdRestaurante() + ", toString()=" + super.toString() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + "]";
+	}
+	
+	
+
 }

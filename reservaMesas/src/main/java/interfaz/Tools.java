@@ -16,5 +16,14 @@ public abstract class Tools {
 		}
 	}
 	
+	public static void insertMesa(Camarero, int idRestaurante) {
+		try {
+			MesaDAO.insertMesa(m, idRestaurante);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 
 }

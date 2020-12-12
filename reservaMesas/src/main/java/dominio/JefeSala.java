@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import persistencia.MesaDAO;
+import persistencia.PersonaDAO;
 import persistencia.ReservaDAO;
 
 public class JefeSala extends Persona {
@@ -28,33 +29,13 @@ public class JefeSala extends Persona {
 		return null;
 	}
 
-	public void asignarMesa() {
-		ArrayList <Mesa> mesas = new ArrayList <Mesa>();
-
+	public void asignarMesa(int idCamarero, int idMesa) {
 		try {
-			mesas=MesaDAO.getMesasLibres(1);
+			MesaDAO.asignarMesa(idCamarero, this.getIdRestaurante(), idMesa);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		Mesa mesa;
-		if(!mesas.isEmpty()) {
-			mesa = mesas.get(0);
-			mesa.setEstado(1);
-			//MesaDAO.modificar(mesa);
-		}
-			
-		/*while(!mesas.isEmpty()) {
-			int index=mesas.size()-1;
-			Mesa mesa=mesas.remove(index);
 
-			System.out.println("ID Mesa: " + mesa.getIdMesa() + ". Estado: " + mesa.getEstado());
-		}*/
-
-	}
-
-	public void asignarCamarero() {
-		// TODO - implement JefeSala.asignarCamarero
-		throw new UnsupportedOperationException();
 	}
 
 	public void getMesas() {
@@ -75,9 +56,13 @@ public class JefeSala extends Persona {
 		}
 	}
 
-	public Camarero[] getCamareros() {
-		// TODO - implement JefeSala.getCamareros
-		throw new UnsupportedOperationException();
+	public void getCamareros() {
+		try {
+			for(Camarero c : PersonaDAO.getCamareros(getIdRestaurante()))
+				System.out.println(c.toString());;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -96,16 +81,8 @@ public class JefeSala extends Persona {
 		return reservas;
 	}
 	
-	/*public ArrayList<Reserva> getReservasFromDate(String date) {
-		ArrayList<Reserva> reservas = null;
-		try {
-			reservas = ReservaDAO.getReservasDate(getIdRestaurante());
-			for(Reserva m : reservas)
-				System.out.println(m.toString());;
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return reservas;
-	}*/
+	public ArrayList<Reserva> getReservasFromDate(String date) {
+		throw new UnsupportedOperationException();
+	}
 
 }
