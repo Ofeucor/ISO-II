@@ -1,4 +1,4 @@
-package persistencia;
+package es.uclm.esi.isoft2.restaurante.reservaMesa.persistencia;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,44 +18,6 @@ public class PersonaDAO {
 	 * @param dni
 	 * @param password
 	 */
-	
-	public static ArrayList<Camarero> getCamareros(int idRestaurante) throws IOException {
-		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetCamareros.php");
-		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-		con.setRequestMethod("POST");
-		con.setRequestProperty("User-Agent", "Mozilla/5.0");
-		con.setDoOutput(true);
-
-		OutputStream directConnection = con.getOutputStream();
-
-		directConnection.write(("Id_Restaurante=" + idRestaurante).getBytes());
-		directConnection.flush();
-		directConnection.close();
-
-		int responseCode = con.getResponseCode();
-		ArrayList<Camarero> camareros = new ArrayList<Camarero>();
-		System.out.println("POST Response Code :: " + responseCode);
-		if (responseCode == HttpURLConnection.HTTP_OK) { // success
-			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-			String inputLine;
-			StringBuffer response = new StringBuffer();
-
-			while ((inputLine = in.readLine()) != null) {
-				response.append(inputLine);
-			}
-			in.close();
-			System.out.println(response.toString());
-			StringTokenizer st = new StringTokenizer(response.toString(), "]");
-
-			if (!response.toString().equals("[]"))
-				while (st.hasMoreTokens()) {
-					camareros.add((Camarero) stringToPersona(st.nextToken().replace("[", "").replace(",", " ")));
-				}
-		} else {
-			System.out.println("Fallo al insertar persona.");
-		}
-		return camareros;
-	}
 	
 	public static Object autenticarse(String dni, String password) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phplogin.php");

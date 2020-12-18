@@ -1,4 +1,4 @@
-package persistencia;
+package es.uclm.esi.isoft2.restaurante.reservaMesa.persistencia;
 
 import java.awt.List;
 import java.io.BufferedReader;
@@ -60,91 +60,12 @@ public class MesaDAO {
 
 		return mesas;
 	}
-
 	
-	public static void asignarMesa(int idCamarero, int idRestaurante, int idMesa) throws IOException{
-		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpAsignarMesa.php");
-		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-		con.setRequestMethod("POST");
-		con.setRequestProperty("User-Agent", "Mozilla/5.0");
-		con.setDoOutput(true);
-
-		OutputStream directConnection = con.getOutputStream();
-
-		directConnection.write(("Id_Mesa=" +idMesa + "&Id_Restaurante=" + idRestaurante + "&Id_Camarero=" + idCamarero).getBytes());
-		directConnection.flush();
-		directConnection.close();
-		int responseCode = con.getResponseCode();
-		System.out.println("POST Response Code :: " + responseCode);
-		if (responseCode == HttpURLConnection.HTTP_OK) { // success
-			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-			String inputLine;
-			StringBuffer response = new StringBuffer();
-
-			while ((inputLine = in.readLine()) != null) {
-				response.append(inputLine);
-			}
-			
-			in.close();
-			System.out.println(response.toString());
-		} else {
-			System.out.println("Fallo al insertar reserva.");
-		}
-
-	}
-	/**
-	 * 
-	 * @param idMesa
-	 * @param idRestaurante
-	 */
 	public Mesa getMesa(int idMesa, int idRestaurante) {
 		// TODO - implement MesaDAO.getMesa
 		throw new UnsupportedOperationException();
 	}
 	
-	public static void insertMesa(Mesa m, int idRestaurante) throws IOException {
-		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpInsertMesa.php");
-		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-		con.setRequestMethod("POST");
-		con.setRequestProperty("User-Agent", "Mozilla/5.0");
-		con.setDoOutput(true);
-
-		OutputStream directConnection = con.getOutputStream();
-		String estado;
-		switch(m.getEstado()) {
-		case 0:estado="Libre"; break;
-		case 1:estado="Reservada"; break;
-		case 2:estado="Ocupada"; break;
-		case 3:estado="Pidiendo"; break;
-		case 4:estado="EsperandoComida"; break;
-		case 5:estado="Servidos"; break;
-		case 6:estado="EsperandoCuenta"; break;
-		case 7:estado="Pagando"; break;
-		case 8:estado="Preparando"; break;
-		default: estado = "Libre";
-	
-	}
-
-		directConnection.write(("Id=" + m.getIdMesa() + "&Estado=" + estado + "&Comensales=" + m.getNumSillas() +
-				"&IdRestaurante=" + idRestaurante).getBytes());
-		directConnection.flush();
-		directConnection.close();
-		int responseCode = con.getResponseCode();
-		System.out.println("POST Response Code :: " + responseCode);
-		if (responseCode == HttpURLConnection.HTTP_OK) { // success
-			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-			String inputLine;
-			StringBuffer response = new StringBuffer();
-
-			while ((inputLine = in.readLine()) != null) {
-				response.append(inputLine);
-			}
-			in.close();
-			System.out.println(response.toString());
-		} else {
-			System.out.println("Fallo al insertar reserva.");
-		}
-	}
 
 	/**
 	 * @throws IOException 

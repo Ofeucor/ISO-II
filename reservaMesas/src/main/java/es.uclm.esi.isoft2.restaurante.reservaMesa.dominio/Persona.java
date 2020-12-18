@@ -1,8 +1,6 @@
-package dominio;
+package es.uclm.esi.isoft2.restaurante.reservaMesa.dominio;
 
 import java.io.IOException;
-
-import persistencia.*;
 
 public class Persona {
 
@@ -58,42 +56,6 @@ public class Persona {
 
 	public void setIdRestaurante(int idRestaurante) {
 		this.idRestaurante = idRestaurante;
-	}
-
-	public void insertarPersona(Persona persona) {
-		try {
-			PersonaDAO.insertPersona(persona);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	/*public Persona autenticarPersona(String dni, String password) {
-		Persona p1 = null;
-		try {
-			//p1 = PersonaDAO.autenticarse(dni, password);
-			
-			this.dni = dni;
-			this.nombre = p1.getNombre();
-			this.apellidos = p1.getApellidos();
-			this.idRestaurante = p1.getIdRestaurante();
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return p1;
-	}*/
-
-	/**
-	 * 
-	 * @param Mesa
-	 * @param Estado
-	 */
-	public void cambiarEstadoMesa(Mesa Mesa, String Estado) {
-		// TODO - implement Persona.cambiarEstadoMesa
-		throw new UnsupportedOperationException();
 	}
 
 	@Override

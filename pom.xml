@@ -28,5 +28,6 @@
 	<module>controlAlmacen</module>
 	<module>gestionPagos</module>
 	<module>estadisticas</module>
+    <module>auxiliar</module>
   </modules>
 </project>

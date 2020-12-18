@@ -1,4 +1,4 @@
-package dominio;
+package es.uclm.esi.isoft2.restaurante.reservaMesa.dominio;
 
 public class Camarero extends Persona {
 

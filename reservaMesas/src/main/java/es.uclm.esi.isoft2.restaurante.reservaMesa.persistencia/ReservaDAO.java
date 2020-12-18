@@ -1,4 +1,4 @@
-package persistencia;
+package es.uclm.esi.isoft2.restaurante.reservaMesa.persistencia;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -54,46 +54,6 @@ public class ReservaDAO {
 		} else {
 			System.out.println("Fallo al insertar reserva.");
 		}
-	}
-	
-	public static ArrayList<Reserva> getReservas(int idRestaurante)  throws IOException{
-		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetReservas.php");
-		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-		con.setRequestMethod("POST");
-		con.setRequestProperty("User-Agent", "Mozilla/5.0");
-		con.setDoOutput(true);
-
-		OutputStream directConnection = con.getOutputStream();
-
-		directConnection.write(("IdRestaurante=" + idRestaurante).getBytes());
-		directConnection.flush();
-		directConnection.close();
-		int responseCode = con.getResponseCode();
-		System.out.println("POST Response Code :: " + responseCode);
-		ArrayList <Reserva> reservas = new ArrayList <Reserva> ();
-		if (responseCode == HttpURLConnection.HTTP_OK) { // success
-			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-			String inputLine;
-			StringBuffer response = new StringBuffer();
-
-			while ((inputLine = in.readLine()) != null) {
-				response.append(inputLine);
-			}
-			
-			in.close();
-			//System.out.println(response.toString());
-			StringTokenizer st = new StringTokenizer(response.toString(), "]");
-			
-			if (!response.toString().equals("[]"))
-				while (st.hasMoreTokens()) {
-					reservas.add(stringToReserva(st.nextToken().replace("[", "").replace(",", " ")));
-				}
-			
-		} else {
-			System.out.println("Fallo al insertar reserva.");
-		}
-
-		return reservas;
 	}
 
 	/**
