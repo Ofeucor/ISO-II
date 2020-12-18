@@ -1,4 +1,4 @@
-package es.uclm.esi.isoft2.restaurante.reservaMesa.persistencia;
+package es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-import dominio.*;
+import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
 
 public class PersonaDAO {
 
@@ -132,6 +132,11 @@ public class PersonaDAO {
 			e.printStackTrace();
 		}
 		return persona;
+	}
+	
+	public static ArrayList<Camarero> getCamareros(int idRestaurante){
+		ArrayList<Camarero> camarerosRestaurante = new ArrayList<Camarero>();
+		return camarerosRestaurante;
 	}
 
 }

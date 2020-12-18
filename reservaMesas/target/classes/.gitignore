@@ -1,3 +1,8 @@
-/interfaz/
-/persistencia/
-/dominio/
+/es_uclm_esi_isoft2.restaurante.reservaMesa.dominio/
+/es_uclm_esi_isoft2.restaurante.reservaMesa.interfaz/
+/es_uclm_esi_isoft2.restaurante.reservaMesa.persistencia/
+/es_uclm_esi_isoft2.restaurante.reservaMesas.dominio/
+/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/
+/es_uclm_esi_isoft2_restaurante_reservaMesa_interfaz/
+/es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/
+/es_uclm_esi_isoft2_restaurante_reservaMesas_interfaz/

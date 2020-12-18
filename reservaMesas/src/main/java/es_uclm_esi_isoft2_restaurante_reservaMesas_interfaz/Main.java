@@ -1,4 +1,4 @@
-package interfaz;
+package es_uclm_esi_isoft2_restaurante_reservaMesas_interfaz;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -6,9 +6,8 @@ import java.util.Date;
 import java.util.Scanner;
 import java.lang.Math;
 
-import dominio.*;
-import persistencia.PersonaDAO;
-import interfaz.*;
+import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
+import es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.*;
 
 public class Main {
 	public final static Scanner sc = new Scanner(System.in);
@@ -46,7 +45,7 @@ public class Main {
 			o = PersonaDAO.autenticarse(dni, password);
 			JefeSala p1 = (JefeSala) o;
 			
-			p1.getCamareros();
+			//p1.getCamareros();
 			//p1.asignarMesa(1,2);
 			//p1.getReservas();
 			//p1.getMesas();

@@ -1,4 +1,4 @@
-package es.uclm.esi.isoft2.restaurante.reservaMesa.dominio;
+package es_uclm_esi_isoft2_restaurante_reservaMesas_dominio;
 
 public class Mesa {
 
@@ -38,6 +38,7 @@ public class Mesa {
 	@Override
 	public String toString() {
 		return "Mesa [idMesa=" + idMesa + ", estado=" + estado + ", numSillas=" + numSillas + "]";
+	
 	}
 
 	

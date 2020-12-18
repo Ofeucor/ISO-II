@@ -1,4 +1,4 @@
-package es.uclm.esi.isoft2.restaurante.reservaMesa.persistencia;
+package es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia;
 
 import java.awt.List;
 import java.io.BufferedReader;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.StringTokenizer;
 
-import dominio.*;
+import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
 
 public class MesaDAO {
 
@@ -74,6 +74,45 @@ public class MesaDAO {
 	 * @param idRestaurante
 	 * @throws  
 	 */
+	/*public ArrayList<Mesa> getMesasReservadas(int idRestaurante) throws IOException{
+		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetMesasReservadas.php");
+		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+		con.setRequestMethod("POST");
+		con.setRequestProperty("User-Agent", "Mozilla/5.0");
+		con.setDoOutput(true);
+
+		OutputStream directConnection = con.getOutputStream();
+
+		directConnection.write(("Id_Restaurante=" + idRestaurante).getBytes());
+		directConnection.flush();
+		directConnection.close();
+		int responseCode = con.getResponseCode();
+		System.out.println("POST Response Code :: " + responseCode);
+		ArrayList <Mesa> mesas = new ArrayList <Mesa> ();
+		if (responseCode == HttpURLConnection.HTTP_OK) { // success
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+
+			in.close();
+			//System.out.println(response.toString());
+			StringTokenizer st = new StringTokenizer(response.toString(), "]");
+
+			if (!response.toString().equals("[]"))
+				while (st.hasMoreTokens()) {
+					mesas.add(stringToMesa(st.nextToken().replace("[", "").replace(",", " ")));
+				}
+
+		} else {
+			System.out.println("Fallo al insertar reserva.");
+		}
+
+		return null;
+	}*/
 	public static ArrayList<Mesa> getMesasLibres(int idRestaurante) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetMesasLibres.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();

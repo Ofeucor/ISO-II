@@ -1,4 +1,4 @@
-package es.uclm.esi.isoft2.b03.restaurante;
+package es_uclm_esi_isoft2_b03_restaurante;
 
 /**
  * Hello world!

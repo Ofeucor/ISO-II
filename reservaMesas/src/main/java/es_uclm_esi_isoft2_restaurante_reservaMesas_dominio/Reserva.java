@@ -1,4 +1,4 @@
-package dominio;
+package es_uclm_esi_isoft2_restaurante_reservaMesas_dominio;
 
 import java.util.Date;
 
