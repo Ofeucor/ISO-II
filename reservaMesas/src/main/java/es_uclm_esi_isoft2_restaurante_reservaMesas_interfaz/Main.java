@@ -13,7 +13,7 @@ public class Main {
 	public final static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		String dni, password;
+		String dni, password;		
 
 		System.out.println("Dime tu DNI:");
 		dni = sc.next();
@@ -37,6 +37,14 @@ public class Main {
 		 * for (int j=0; j < 2;j ++)
 			for(int i = 1; i < 10; i++)
 			Tools.insertMesa(new Mesa(i, ((int)(Math.random()*9)),  (((int)(Math.random()*3))*2)+1), j+1);*/
+		
+		//Devuelve una mesa dado un idMesa e idRestaurante
+		try {
+			Mesa mesaprueba = MesaDAO.getMesa(1, 1);
+			System.out.println(mesaprueba.toString());
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 		
 		Object o;
 		try {

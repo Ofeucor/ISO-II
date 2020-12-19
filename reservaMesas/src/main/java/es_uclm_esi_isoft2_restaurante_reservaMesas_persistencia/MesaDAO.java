@@ -55,15 +55,51 @@ public class MesaDAO {
 				}
 			
 		} else {
-			System.out.println("Fallo al insertar reserva.");
+			System.out.println("Fallo al obtener las mesas.");
 		}
 
 		return mesas;
 	}
 	
-	public Mesa getMesa(int idMesa, int idRestaurante) {
-		// TODO - implement MesaDAO.getMesa
-		throw new UnsupportedOperationException();
+	public static Mesa getMesa(int idMesa, int idRestaurante) throws IOException{		
+		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetMesa.php");
+		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+		con.setRequestMethod("POST");
+		con.setRequestProperty("User-Agent", "Mozilla/5.0");
+		con.setDoOutput(true);
+
+		OutputStream directConnection = con.getOutputStream();
+
+		directConnection.write(("IdRestaurante=" + idRestaurante + "&Id=" + idMesa).getBytes());
+		directConnection.flush();
+		directConnection.close();
+		int responseCode = con.getResponseCode();
+		System.out.println("POST Response Code :: " + responseCode);
+		
+		Mesa mesa=null;
+		if (responseCode == HttpURLConnection.HTTP_OK) { // success
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			
+			in.close();
+			//System.out.println(response.toString());
+			StringTokenizer st = new StringTokenizer(response.toString(), "]");
+			
+			if (!response.toString().equals("[]"))
+				while (st.hasMoreTokens()) {
+					mesa = stringToMesa(st.nextToken().replace("[", "").replace(",", " "));
+				}
+			
+		} else {
+			System.out.println("Fallo al obtener la mesa con id: " + idMesa);
+		}
+
+		return mesa;
 	}
 	
 
