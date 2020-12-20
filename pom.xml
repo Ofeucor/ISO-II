@@ -25,9 +25,9 @@
   <modules>
   	<module>reservaMesas</module>
   	<module>pedidoComanda</module>
-	<module>controlAlmacen</module>
-	<module>gestionPagos</module>
-	<module>estadisticas</module>
+  	<module>controlAlmacen</module>
+  	<module>gestionPagos</module>
+  	<module>estadisticas</module>
     <module>auxiliar</module>
   </modules>
 </project>
