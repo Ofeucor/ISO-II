@@ -29,5 +29,6 @@
 	<module>gestionPagos</module>
 	<module>estadisticas</module>
     <module>auxiliar</module>
+    <module>pedidoComandas</module>
   </modules>
 </project>
