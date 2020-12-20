@@ -1,10 +1,3 @@
-<<<<<<< Updated upstream
-package es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication;
-
-public class CamareroManager extends AbstractPersonaManager{
-
-}
-=======
 package es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication;
 
 import java.io.IOException;
@@ -47,8 +40,8 @@ public class CamareroManager extends AbstractPersonaManager{
 		throw new UnsupportedOperationException();
 	}
 
-	public Alimento[] getMenu() {
-		// TODO - implement Camarero.getMenu
+	public ArrayList<Alimento> getMenu() {
+		
 		throw new UnsupportedOperationException();
 	}
 	
@@ -67,4 +60,3 @@ public class CamareroManager extends AbstractPersonaManager{
 		throw new UnsupportedOperationException();
 	}
 }
->>>>>>> Stashed changes

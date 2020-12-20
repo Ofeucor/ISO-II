@@ -1,6 +1,9 @@
 package es_uclm_esi_isoft2_b03_restaurante_pedidoComandas_dominio;
 
-public class Alimento {
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Alimento implements Comparable<Alimento> {
 
 	private int idAlimento;
 	private String nombre;
@@ -55,6 +58,29 @@ public class Alimento {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean flag=false;
+		try {
+			Alimento a2 = (Alimento)obj;
+			if(a2.getNombre().equals(this.getNombre()) && a2.getPrecio() == this.getPrecio()) flag = true;
+		}catch(Exception e) {
+			
+		}
+		return flag;
+	}
+
+	public int compareTo(Alimento o) {
+		ArrayList<String> list = (ArrayList<String>) Arrays.asList(new String[]{"Bebida","Entrante", "PrimerPlato","Segundo Plato", "Postre"});
+		if(o.getTipo() == this.getTipo())
+			return 0;
+		else
+			return 1;
+	}
+	
+	
+	
 	
 	
 
