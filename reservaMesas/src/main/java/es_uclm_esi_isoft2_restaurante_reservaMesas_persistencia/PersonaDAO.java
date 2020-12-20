@@ -47,9 +47,9 @@ public class PersonaDAO {
 			StringTokenizer st = new StringTokenizer(response.toString(), "]");
 
 			if (!response.toString().equals("[]"))
-				while (st.hasMoreTokens()) {
-					return stringToPersona(st.nextToken().replace("[", "").replace(",", " "));
-				}
+				
+				return stringToPersona(st.nextToken().replace("[", "").replace(",", " "));
+				
 		} else {
 			System.out.println("Fallo al insertar persona.");
 		}
@@ -128,15 +128,49 @@ public class PersonaDAO {
 			case "Administrador":
 				break;
 			}
+			//System.out.println(persona.getClass().getName().toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return persona;
 	}
 	
-	public static ArrayList<Camarero> getCamareros(int idRestaurante){
-		ArrayList<Camarero> camarerosRestaurante = new ArrayList<Camarero>();
-		return camarerosRestaurante;
+	public static ArrayList<Camarero> getCamareros(int idRestaurante) throws IOException {
+		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetCamareros.php");
+		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+		con.setRequestMethod("POST");
+		con.setRequestProperty("User-Agent", "Mozilla/5.0");
+		con.setDoOutput(true);
+
+		OutputStream directConnection = con.getOutputStream();
+
+		directConnection.write(("Id_Restaurante=" + idRestaurante ).getBytes());
+		directConnection.flush();
+		directConnection.close();
+
+		int responseCode = con.getResponseCode();
+		//System.out.println("POST Response Code :: " + responseCode);
+		ArrayList <Camarero> camareros = new ArrayList <Camarero> ();
+		if (responseCode == HttpURLConnection.HTTP_OK) { // success
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+			System.out.println(response.toString());
+			StringTokenizer st = new StringTokenizer(response.toString(), "]");
+
+			if (!response.toString().equals("[]"))
+				while(st.hasMoreElements())
+					camareros.add((Camarero)(stringToPersona(st.nextToken().replace("[", "").replace(",", " "))));
+				
+		} else {
+			System.out.println("Fallo al insertar persona.");
+		}
+		return camareros;
 	}
 
 }

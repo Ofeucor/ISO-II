@@ -28,6 +28,12 @@
   	   <artifactId>reservaMesas</artifactId>
        <version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	
+  	<dependency>
+  	   <groupId>es.uclm.esi.isoft2.b03</groupId>
+  	   <artifactId>pedidoComandas</artifactId>
+       <version>0.0.1-SNAPSHOT</version>
+  	</dependency>
     
   </dependencies>
 </project>

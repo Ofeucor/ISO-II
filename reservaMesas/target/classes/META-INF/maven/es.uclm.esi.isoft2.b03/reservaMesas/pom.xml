@@ -8,9 +8,9 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>es.uclm.esi.isoft2.b03</groupId>
-  <artifactId>pedidoComandas</artifactId>
+  <artifactId>reservaMesas</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>pedidoComandas</name>
+  <name>reservaMesas</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,10 +22,5 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-  	<dependency>
-  	   <groupId>es.uclm.esi.isoft2.b03</groupId>
-  	   <artifactId>reservaMesas</artifactId>
-       <version>0.0.1-SNAPSHOT</version>
-  	</dependency>
   </dependencies>
 </project>

@@ -9,36 +9,40 @@ import es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.*;
 
 public class JefeSalaManager extends AbstractPersonaManager{
 
-	/**
-	 * 
-	 * @param fecha
-	 * @param hora
-	 * @param datosCliente
-	 * @param mesa
-	 * @throws IOException 
-	 */
-	public Reserva realizarReserva(Date fecha, String hora, String datosCliente, Mesa mesa, int idRestaurante) throws IOException {
+
+	JefeSala jefeSala;
+	
+	
+	public JefeSalaManager(JefeSala jefeSala) {
+
+		this.jefeSala = jefeSala;
+	}
+
+	public void realizarReserva(Date fecha, String datosCliente) {
 		// TODO - implement JefeSalaManager.realizarReserva
-		Reserva reserva1 = new Reserva(fecha, datosCliente);
-		ReservaDAO.insertReserva(reserva1, idRestaurante);
-		return null;
+		try {
+			Reserva reserva1 = new Reserva(fecha, datosCliente);
+			ReservaDAO.insertReserva(reserva1, jefeSala.getIdRestaurante());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	public void asignarMesa() {
-		// TODO - implement JefeSalaManager.asignarMesa
-		throw new UnsupportedOperationException();
-	}
-
-	public void asignarCamarero() {
-		// TODO - implement JefeSalaManager.asignarCamarero
-		throw new UnsupportedOperationException();
+	public void asignarMesa(int idMesa, String idCamarero) {
+		try {
+			MesaDAO.asignarMesa(idMesa, idCamarero, jefeSala.getIdRestaurante());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
-	public ArrayList<Mesa> getMesasLibres(int idRestaurante) {
+	public ArrayList<Mesa> getMesasLibres() {
 		// TODO - implement JefeSalaManager.getMesas
 		ArrayList<Mesa> mesasLibresRestaurante = new ArrayList<Mesa>();
 		try {
-			for(Mesa m : MesaDAO.getMesasLibres(idRestaurante)) {
+			for(Mesa m : MesaDAO.getMesasLibres(jefeSala.getIdRestaurante())) {
 				mesasLibresRestaurante.add(m);
 				System.out.println(m.toString());
 			}
@@ -48,11 +52,11 @@ public class JefeSalaManager extends AbstractPersonaManager{
 		return mesasLibresRestaurante;
 	}
 	
-	public ArrayList<Mesa> getMesas(int idRestaurante) {
+	public ArrayList<Mesa> getMesas() {
 		// TODO - implement JefeSalaManager.getMesas
 		ArrayList<Mesa> mesasRestaurante = new ArrayList<Mesa>();
 		try {
-			for(Mesa m : MesaDAO.getMesas(idRestaurante)) {
+			for(Mesa m : MesaDAO.getMesas(jefeSala.getIdRestaurante())) {
 				mesasRestaurante.add(m);
 				System.out.println(m.toString());
 			}
@@ -62,11 +66,16 @@ public class JefeSalaManager extends AbstractPersonaManager{
 		return mesasRestaurante;
 	}
 
-	public ArrayList<Camarero> getCamareros(int idRestaurante) throws IOException {
+	public ArrayList<Camarero> getCamareros() {
 		ArrayList<Camarero> camarerosRestaurante = new ArrayList<Camarero>();
-		for(Camarero c : PersonaDAO.getCamareros(idRestaurante)) {
-			camarerosRestaurante.add(c);
-			System.out.println(c.toString());
+	
+		try {
+			for(Camarero c : PersonaDAO.getCamareros(jefeSala.getIdRestaurante())) {
+				camarerosRestaurante.add(c);
+				System.out.println(c.toString());
+			}
+		}catch(Exception e){
+			System.out.println(e.toString());
 		}
 		return camarerosRestaurante;
 	}
@@ -75,11 +84,15 @@ public class JefeSalaManager extends AbstractPersonaManager{
 	 * 
 	 * @param date
 	 */
-	public ArrayList<Reserva> getReservas(int idRestaurante) throws IOException {
+	public ArrayList<Reserva> getReservas(){
 		ArrayList<Reserva> reservas = null;
-		reservas = ReservaDAO.getReservas(idRestaurante);
-		for(Reserva m : reservas)
-			System.out.println(m.toString());
+		try {
+			reservas = ReservaDAO.getReservas(jefeSala.getIdRestaurante());
+			for(Reserva m : reservas)
+				System.out.println(m.toString());
+		}catch(Exception e){
+			
+		}
 		return reservas;
 	}
 }
