@@ -7,6 +7,10 @@ public class Mesa {
 	private int numSillas;
 	//private float precio;
 	
+	public Mesa(int idMesa) {
+		this.idMesa = idMesa;
+	}
+	
 	public Mesa(int idMesa, int estado,  int numSillas) {
 		this.idMesa = idMesa;
 		this.estado = estado;
@@ -33,6 +37,13 @@ public class Mesa {
 
 	public void setEstado(int estado) {
 		this.estado = estado;
+	}
+	
+
+	@Override
+	public boolean equals(Object obj) {
+		Mesa o = (Mesa) obj;
+		return (o.getIdMesa() == this.getIdMesa());
 	}
 
 	@Override

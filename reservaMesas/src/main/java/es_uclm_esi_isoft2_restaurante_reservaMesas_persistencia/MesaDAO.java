@@ -10,6 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.StringTokenizer;
 
@@ -144,8 +145,8 @@ public class MesaDAO {
 	 * @param idRestaurante
 	 * @throws  
 	 */
-	/*public ArrayList<Mesa> getMesasReservadas(int idRestaurante) throws IOException{
-		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetMesasReservadas.php");
+	public static ArrayList<Mesa> getMesasAsignadas(int idRestaurante, String idCamarero) throws IOException{
+		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetMesasAsignadas.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 		con.setRequestMethod("POST");
 		con.setRequestProperty("User-Agent", "Mozilla/5.0");
@@ -153,7 +154,7 @@ public class MesaDAO {
 
 		OutputStream directConnection = con.getOutputStream();
 
-		directConnection.write(("Id_Restaurante=" + idRestaurante).getBytes());
+		directConnection.write(("Id_Restaurante=" + idRestaurante + "&Id_Camarero=" + idCamarero).getBytes());
 		directConnection.flush();
 		directConnection.close();
 		int responseCode = con.getResponseCode();
@@ -169,7 +170,7 @@ public class MesaDAO {
 			}
 
 			in.close();
-			//System.out.println(response.toString());
+			System.out.println(response.toString());
 			StringTokenizer st = new StringTokenizer(response.toString(), "]");
 
 			if (!response.toString().equals("[]"))
@@ -181,8 +182,11 @@ public class MesaDAO {
 			System.out.println("Fallo al insertar reserva.");
 		}
 
-		return null;
-	}*/
+		return mesas;
+	}
+	
+	
+	
 	public static ArrayList<Mesa> getMesasLibres(int idRestaurante) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetMesasLibres.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -256,6 +260,83 @@ public class MesaDAO {
 		}
 		
 		return mesa;
+	}
+	
+	public static int atender(Mesa mesa, int comensales, int id_Restaurante, String id_Camarero) throws IOException {
+		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpAtender.php");
+		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+		con.setRequestMethod("POST");
+		con.setRequestProperty("User-Agent", "Mozilla/5.0");
+		con.setDoOutput(true);
+
+		OutputStream directConnection = con.getOutputStream();
+		
+		String fecha= new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(Calendar.getInstance().getTime());
+
+		directConnection.write(("Id_Mesa=" + mesa.getIdMesa() + "&Id_Restaurante=" + id_Restaurante + "&Id_Camarero=" 
+				+ id_Camarero + "&Comensales=" + comensales + "&Fecha=" + fecha).getBytes());
+		directConnection.flush();
+		directConnection.close();
+
+		int responseCode = con.getResponseCode();
+		System.out.println("POST Response Code :: " + responseCode);
+		if (responseCode == HttpURLConnection.HTTP_OK) { // success
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+
+			// print result
+			System.out.println(response.toString());
+
+			
+			return Integer.parseInt(response.toString().split(":")[1]);
+		} else {
+			System.out.println("NO FUNCIONÃ“");
+			return -1;
+		}
+	}
+	public static int finalizarAtender(Mesa mesa, int comensales, int id_Restaurante, String id_Camarero, int id_Registro) throws IOException {
+		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpAtenderFin.php");
+		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+		con.setRequestMethod("POST");
+		con.setRequestProperty("User-Agent", "Mozilla/5.0");
+		con.setDoOutput(true);
+
+		OutputStream directConnection = con.getOutputStream();
+		
+		String fecha= new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(Calendar.getInstance().getTime());
+
+		directConnection.write(("Id_Mesa=" + mesa.getIdMesa() + "&Id_Restaurante=" + id_Restaurante + "&Id_Camarero=" 
+				+ id_Camarero + "&Comensales=" + comensales + "&Fecha=" + fecha + "&Id_Registro=" + id_Registro).getBytes());
+		directConnection.flush();
+		directConnection.close();
+
+		int responseCode = con.getResponseCode();
+		System.out.println("POST Response Code :: " + responseCode);
+		if (responseCode == HttpURLConnection.HTTP_OK) { // success
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+
+			// print result
+			System.out.println(response.toString());
+
+			
+			return Integer.parseInt(response.toString().split(":")[1]);
+		} else {
+			System.out.println("NO FUNCIONÃ“");
+			return -1;
+		}
 	}
 
 }
