@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PersonaDAO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">reservaMesas</a> &gt; <a href="index.source.html" class="el_package">es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia</a> &gt; <span class="el_source">PersonaDAO.java</span></div><h1>PersonaDAO.java</h1><pre class="source lang-java linenums">package es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
+
+<span class="nc" id="L14">public class PersonaDAO {</span>
+
+	/**
+	 * 
+	 * @param dni
+	 * @param password
+	 */
+	
+	public static Object autenticarse(String dni, String password) throws IOException {
+<span class="fc" id="L23">		URL obj = new URL(&quot;https://isoft2-2021-b03.000webhostapp.com/phplogin.php&quot;);</span>
+<span class="fc" id="L24">		HttpURLConnection con = (HttpURLConnection) obj.openConnection();</span>
+<span class="fc" id="L25">		con.setRequestMethod(&quot;POST&quot;);</span>
+<span class="fc" id="L26">		con.setRequestProperty(&quot;User-Agent&quot;, &quot;Mozilla/5.0&quot;);</span>
+<span class="fc" id="L27">		con.setDoOutput(true);</span>
+
+<span class="fc" id="L29">		OutputStream directConnection = con.getOutputStream();</span>
+
+<span class="fc" id="L31">		directConnection.write((&quot;usuario=&quot; + dni + &quot;&amp;password=&quot; + password).getBytes());</span>
+<span class="fc" id="L32">		directConnection.flush();</span>
+<span class="fc" id="L33">		directConnection.close();</span>
+
+<span class="fc" id="L35">		int responseCode = con.getResponseCode();</span>
+<span class="fc" id="L36">		System.out.println(&quot;POST Response Code :: &quot; + responseCode);</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">		if (responseCode == HttpURLConnection.HTTP_OK) { // success</span>
+<span class="fc" id="L38">			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));</span>
+			String inputLine;
+<span class="fc" id="L40">			StringBuffer response = new StringBuffer();</span>
+
+<span class="fc bfc" id="L42" title="All 2 branches covered.">			while ((inputLine = in.readLine()) != null) {</span>
+<span class="fc" id="L43">				response.append(inputLine);</span>
+			}
+<span class="fc" id="L45">			in.close();</span>
+<span class="fc" id="L46">			System.out.println(response.toString());</span>
+<span class="fc" id="L47">			StringTokenizer st = new StringTokenizer(response.toString(), &quot;]&quot;);</span>
+
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">			if (!response.toString().equals(&quot;[]&quot;))</span>
+				
+<span class="fc" id="L51">				return stringToPersona(st.nextToken().replace(&quot;[&quot;, &quot;&quot;).replace(&quot;,&quot;, &quot; &quot;));</span>
+				
+<span class="nc" id="L53">		} else {</span>
+<span class="nc" id="L54">			System.out.println(&quot;Fallo al insertar persona.&quot;);</span>
+		}
+<span class="nc" id="L56">		return null;</span>
+	}
+
+	/**
+	 * 
+	 * @param persona
+	 */
+	public static void insertPersona(Persona persona) throws IOException {
+<span class="fc" id="L64">		URL obj = new URL(&quot;https://isoft2-2021-b03.000webhostapp.com/phpInsertEmpleado.php&quot;);</span>
+<span class="fc" id="L65">		HttpURLConnection con = (HttpURLConnection) obj.openConnection();</span>
+<span class="fc" id="L66">		con.setRequestMethod(&quot;POST&quot;);</span>
+<span class="fc" id="L67">		con.setRequestProperty(&quot;User-Agent&quot;, &quot;Mozilla/5.0&quot;);</span>
+<span class="fc" id="L68">		con.setDoOutput(true);</span>
+
+<span class="fc" id="L70">		OutputStream directConnection = con.getOutputStream();</span>
+
+<span class="fc" id="L72">		String rol = persona.getClass().getName().toString().split(&quot;\\.&quot;)[1];</span>
+<span class="fc" id="L73">		String pass = (persona.getApellidos() + persona.getDni());</span>
+
+<span class="fc" id="L75">		directConnection.write(</span>
+<span class="fc" id="L76">				(&quot;nombre=&quot; + persona.getNombre() + &quot;&amp;apellidos=&quot; + persona.getApellidos() + &quot;&amp;DNI=&quot; + persona.getDni()</span>
+<span class="fc" id="L77">						+ &quot;&amp;Rol=&quot; + rol + &quot;&amp;Password=&quot; + pass + &quot;&amp;idRestaurante=&quot; + persona.getIdRestaurante())</span>
+<span class="fc" id="L78">								.getBytes());</span>
+<span class="fc" id="L79">		directConnection.flush();</span>
+<span class="fc" id="L80">		directConnection.close();</span>
+
+<span class="fc" id="L82">		int responseCode = con.getResponseCode();</span>
+<span class="fc" id="L83">		System.out.println(&quot;POST Response Code :: &quot; + responseCode);</span>
+<span class="pc bpc" id="L84" title="1 of 2 branches missed.">		if (responseCode == HttpURLConnection.HTTP_OK) { // success</span>
+<span class="fc" id="L85">			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));</span>
+			String inputLine;
+<span class="fc" id="L87">			StringBuffer response = new StringBuffer();</span>
+
+<span class="fc bfc" id="L89" title="All 2 branches covered.">			while ((inputLine = in.readLine()) != null) {</span>
+<span class="fc" id="L90">				response.append(inputLine);</span>
+			}
+<span class="fc" id="L92">			in.close();</span>
+<span class="fc" id="L93">			System.out.println(response.toString());</span>
+<span class="fc" id="L94">		} else {</span>
+<span class="nc" id="L95">			System.out.println(&quot;Fallo al insertar persona.&quot;);</span>
+		}
+<span class="fc" id="L97">	}</span>
+
+	/**
+	 * 
+	 * @param dni
+	 */
+	public void deletePersona(int dni) {
+		
+<span class="nc" id="L105">	}</span>
+
+	public static Object stringToPersona(String r) {
+<span class="fc" id="L108">		StringTokenizer st = new StringTokenizer(r, &quot; &quot;);</span>
+<span class="fc" id="L109">		Persona persona = null;</span>
+
+		try {
+<span class="fc" id="L112">			String nombre = st.nextToken().replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
+<span class="fc" id="L113">			String apellidos = st.nextToken().replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
+<span class="fc" id="L114">			String dni = st.nextToken().replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
+<span class="fc" id="L115">			String rol = st.nextToken().replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
+<span class="fc" id="L116">			String password = st.nextToken().replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
+<span class="fc" id="L117">			int idRestaurante = Integer.parseInt(st.nextToken().replace(&quot;\&quot;&quot;, &quot;&quot;));</span>
+
+<span class="pc bpc" id="L119" title="14 of 17 branches missed.">			switch (rol) {</span>
+			case &quot;JefeSala&quot;:
+<span class="nc" id="L121">				persona = new JefeSala(dni, nombre, apellidos, idRestaurante);</span>
+<span class="nc" id="L122">				break;</span>
+			case &quot;Camarero&quot;:
+<span class="fc" id="L124">				persona = new Camarero(dni, nombre, apellidos, idRestaurante);</span>
+<span class="fc" id="L125">				break;</span>
+			case &quot;Cocinero&quot;:
+<span class="nc" id="L127">				break;</span>
+			case &quot;Administrador&quot;:
+				break;
+			}
+			//System.out.println(persona.getClass().getName().toString());
+<span class="nc" id="L132">		} catch (Exception e) {</span>
+<span class="nc" id="L133">			e.printStackTrace();</span>
+<span class="fc" id="L134">		}</span>
+<span class="fc" id="L135">		return persona;</span>
+	}
+	
+	public static ArrayList&lt;Camarero&gt; getCamareros(int idRestaurante) throws IOException {
+<span class="fc" id="L139">		URL obj = new URL(&quot;https://isoft2-2021-b03.000webhostapp.com/phpGetCamareros.php&quot;);</span>
+<span class="fc" id="L140">		HttpURLConnection con = (HttpURLConnection) obj.openConnection();</span>
+<span class="fc" id="L141">		con.setRequestMethod(&quot;POST&quot;);</span>
+<span class="fc" id="L142">		con.setRequestProperty(&quot;User-Agent&quot;, &quot;Mozilla/5.0&quot;);</span>
+<span class="fc" id="L143">		con.setDoOutput(true);</span>
+
+<span class="fc" id="L145">		OutputStream directConnection = con.getOutputStream();</span>
+
+<span class="fc" id="L147">		directConnection.write((&quot;Id_Restaurante=&quot; + idRestaurante ).getBytes());</span>
+<span class="fc" id="L148">		directConnection.flush();</span>
+<span class="fc" id="L149">		directConnection.close();</span>
+
+<span class="fc" id="L151">		int responseCode = con.getResponseCode();</span>
+		//System.out.println(&quot;POST Response Code :: &quot; + responseCode);
+<span class="fc" id="L153">		ArrayList &lt;Camarero&gt; camareros = new ArrayList &lt;Camarero&gt; ();</span>
+<span class="pc bpc" id="L154" title="1 of 2 branches missed.">		if (responseCode == HttpURLConnection.HTTP_OK) { // success</span>
+<span class="fc" id="L155">			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));</span>
+			String inputLine;
+<span class="fc" id="L157">			StringBuffer response = new StringBuffer();</span>
+
+<span class="fc bfc" id="L159" title="All 2 branches covered.">			while ((inputLine = in.readLine()) != null) {</span>
+<span class="fc" id="L160">				response.append(inputLine);</span>
+			}
+<span class="fc" id="L162">			in.close();</span>
+<span class="fc" id="L163">			System.out.println(response.toString());</span>
+<span class="fc" id="L164">			StringTokenizer st = new StringTokenizer(response.toString(), &quot;]&quot;);</span>
+
+<span class="pc bpc" id="L166" title="1 of 2 branches missed.">			if (!response.toString().equals(&quot;[]&quot;))</span>
+<span class="fc bfc" id="L167" title="All 2 branches covered.">				while(st.hasMoreElements())</span>
+<span class="fc" id="L168">					camareros.add((Camarero)(stringToPersona(st.nextToken().replace(&quot;[&quot;, &quot;&quot;).replace(&quot;,&quot;, &quot; &quot;))));</span>
+				
+<span class="fc" id="L170">		} else {</span>
+<span class="nc" id="L171">			System.out.println(&quot;Fallo al insertar persona.&quot;);</span>
+		}
+<span class="fc" id="L173">		return camareros;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
