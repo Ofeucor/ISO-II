@@ -104,10 +104,10 @@ public class AlimentoDAO {
 	 * @date 11/12/2020
 	 * @author Julio Molina
 	 *************************************************************************************/
-	public Alimento deletePlato(int idPlato) {
-		// TODO - implement PlatoDAO.deletePlato
-		throw new UnsupportedOperationException();
-	}
+//	public Alimento deletePlato(int idPlato) {
+//		// TODO - implement PlatoDAO.deletePlato
+//		throw new UnsupportedOperationException();
+//	}
 
 	
 
@@ -119,24 +119,24 @@ public class AlimentoDAO {
 	 * @date 11/12/2020
 	 * @author Javier Ã�lvarez
 	 *************************************************************************************/
-	public static Ingrediente stringToIngrediente(String r) {
-		StringTokenizer st = new StringTokenizer(r, " ");
-		Ingrediente ingrediente = null;
-
-		try {
-			int idPlato = Integer.parseInt(st.nextToken().replace("\"", ""));
-			int idIngrediente = Integer.parseInt(st.nextToken().replace("\"", ""));
-			float cantidadIngrediente = Float.parseFloat(st.nextToken().replace("\"", ""));
-			st.nextToken().replace("\"", "");
-			String nombre = st.nextToken().replace("\"", "");
-
-			ingrediente = new Ingrediente(idIngrediente, nombre, cantidadIngrediente);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return ingrediente;
-	}
-	
+//	public static Ingrediente stringToIngrediente(String r) {
+//		StringTokenizer st = new StringTokenizer(r, " ");
+//		Ingrediente ingrediente = null;
+//
+//		try {
+//			int idPlato = Integer.parseInt(st.nextToken().replace("\"", ""));
+//			int idIngrediente = Integer.parseInt(st.nextToken().replace("\"", ""));
+//			float cantidadIngrediente = Float.parseFloat(st.nextToken().replace("\"", ""));
+//			st.nextToken().replace("\"", "");
+//			String nombre = st.nextToken().replace("\"", "");
+//
+//			ingrediente = new Ingrediente(idIngrediente, nombre, cantidadIngrediente);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return ingrediente;
+//	}
+//	
 	
 	public static Alimento stringToAlimento(String r) {
 		StringTokenizer st = new StringTokenizer(r, ",");

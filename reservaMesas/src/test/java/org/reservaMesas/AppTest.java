@@ -83,10 +83,15 @@ public class AppTest extends TestCase {
 		PersonaDAO.insertPersona(new Camarero("00000008B", "Sergio", "Molina", 2));
 		PersonaDAO.autenticarse("00000008B", "abcd");
 		PersonaDAO.getCamareros(1);
+		
 		// MESADAO
 		MesaDAO.getMesas(1);
 		MesaDAO.getMesasLibres(1);
 		MesaDAO.asignarMesa(1, "00000001B", 1);
+		MesaDAO.atender(mesaprueba, 5, 1, "00000003B");
+		MesaDAO.finalizarAtender(mesaprueba, 5, 1, "00000005B", 1);
+		MesaDAO.getMesasAsignadas(1, "00000003B");
+		
 		// RESERVADAO
 		ReservaDAO.insertReserva(r1,1);
 		ReservaDAO.getReservas(1);
