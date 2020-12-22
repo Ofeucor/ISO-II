@@ -70,9 +70,6 @@ public class AppTest extends TestCase {
 		
 		// COMANDA
 		Comanda com1 = new Comanda(11, "22-12-2020", "14:35:42");
-		
-
-		
 		Comanda com2 = new Comanda("23-12-2020", "21:25:36", array1);
 		Comanda com3 = new Comanda("24-12-2020", "13:57:37");
 		

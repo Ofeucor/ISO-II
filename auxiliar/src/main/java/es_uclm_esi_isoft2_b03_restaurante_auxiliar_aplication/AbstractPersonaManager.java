@@ -20,8 +20,8 @@ public abstract class AbstractPersonaManager {
 	 * @param Mesa
 	 * @param Estado
 	 */
-	public void cambiarEstadoMesa(Mesa Mesa, String Estado) {
-		// TODO - implement AbstractPersonaManager.cambiarEstadoMesa
-		throw new UnsupportedOperationException();
-	}
+//	public void cambiarEstadoMesa(Mesa Mesa, String Estado) {
+//		// TODO - implement AbstractPersonaManager.cambiarEstadoMesa
+//		throw new UnsupportedOperationException();
+//	}
 }
