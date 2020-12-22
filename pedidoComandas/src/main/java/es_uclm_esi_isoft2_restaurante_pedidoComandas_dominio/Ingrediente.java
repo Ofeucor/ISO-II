@@ -10,15 +10,21 @@ public class Ingrediente implements Comparable<Ingrediente>{
 	private float cantidad;
 
 	/**
+	 * Constructor para la creacin de ingrediente sin identificador 
 	 * @param idIngrediente
 	 * @param cantidad
 	 */
-
 	public Ingrediente(int idIngrediente, float cantidad) {
 		this.idIngrediente = idIngrediente;
 		this.cantidad = cantidad;
 	}
 
+	/**
+	 * Constructor para la creacin de ingrediente con identificador(obtenido de la base de datos)
+	 * @param idIngrediente
+	 * @param idIngrediente
+	 * @param cantidad
+	 */
 	public Ingrediente(int idIngrediente, String nombre, float cantidad) {
 		super();
 		this.idIngrediente = idIngrediente;
@@ -26,6 +32,12 @@ public class Ingrediente implements Comparable<Ingrediente>{
 		this.cantidad = cantidad;
 	}
 
+	/**
+	 * Devuel
+	 * @param idIngrediente
+	 * @param idIngrediente
+	 * @param cantidad
+	 */
 	public int getIdIngrediente() {
 		return this.idIngrediente;
 	}

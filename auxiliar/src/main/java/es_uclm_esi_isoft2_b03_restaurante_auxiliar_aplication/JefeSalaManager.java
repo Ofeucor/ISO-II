@@ -12,12 +12,24 @@ public class JefeSalaManager extends AbstractPersonaManager{
 
 	JefeSala jefeSala;
 	
-	
+	/**
+	 * Constructor para la clase JefeSalaManager este tendra como atributo un JefeSala
+	 * 
+	 * @param jefeSala
+	 */
 	public JefeSalaManager(JefeSala jefeSala) {
 
 		this.jefeSala = jefeSala;
 	}
 
+	/**
+	 * Método para realizar una reserva, se insertara a la base de datos la reserva realizada por el cliente,
+	 * para conectar con la base de datos haremos uso de ReservaDAO
+	
+	 * @param datosCliente
+	 * @param fecha
+	 * @return void
+	 */
 	public void realizarReserva(Date fecha, String datosCliente) {
 		// TODO - implement JefeSalaManager.realizarReserva
 		try {
@@ -29,6 +41,13 @@ public class JefeSalaManager extends AbstractPersonaManager{
 		}
 	}
 
+	/**
+	 * Método para asignar mesa al cliente una vez llega el cliente al restaurante, se le asigna una mesa libre
+	 * esa asiganación se verá reflejada en la base de datos; se hace uso de la clase MesaDAO para la conexión con la base de datos
+	 * @param idMesa
+	 * @param idCamarero
+	 * @return void
+	 */
 	public void asignarMesa(int idMesa, String idCamarero) {
 		try {
 			MesaDAO.asignarMesa(idMesa, idCamarero, jefeSala.getIdRestaurante());
@@ -38,6 +57,11 @@ public class JefeSalaManager extends AbstractPersonaManager{
 		}
 	}
 	
+	/**
+	 * Método que nos devuelve las mesas que se encuentran en estado "libre " en el restaurante; 
+	 * se hace uso de MesaDAO que es la que conecta con la base de datos
+	 * @return ArrayList()
+	 */
 	public ArrayList<Mesa> getMesasLibres() {
 		// TODO - implement JefeSalaManager.getMesas
 		ArrayList<Mesa> mesasLibresRestaurante = new ArrayList<Mesa>();
@@ -52,6 +76,11 @@ public class JefeSalaManager extends AbstractPersonaManager{
 		return mesasLibresRestaurante;
 	}
 	
+	/**
+	 * Método que nos devuelve las mesas que se encuentran en cualquier estado en el restaurante; 
+	 * se hace uso de MesaDAO que es la que conecta con la base de datos
+	 * @return ArrayList()
+	 */
 	public ArrayList<Mesa> getMesas() {
 		// TODO - implement JefeSalaManager.getMesas
 		ArrayList<Mesa> mesasRestaurante = new ArrayList<Mesa>();
@@ -66,6 +95,10 @@ public class JefeSalaManager extends AbstractPersonaManager{
 		return mesasRestaurante;
 	}
 
+	/**
+	 * Método que nos devuelve los camareros que estan trabajando en el restaurante
+	 * @return ArrayList()
+	 */
 	public ArrayList<Camarero> getCamareros() {
 		ArrayList<Camarero> camarerosRestaurante = new ArrayList<Camarero>();
 	
@@ -81,8 +114,8 @@ public class JefeSalaManager extends AbstractPersonaManager{
 	}
 
 	/**
-	 * Metodo para obtener una reserva
-	 * @return reserva
+	 * Metodo para obtener las reservas que tiene un restaurante
+	 * @return ArrayList()
 	 */
 	public ArrayList<Reserva> getReservas(){
 		ArrayList<Reserva> reservas = null;

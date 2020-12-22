@@ -5,7 +5,8 @@ import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
 public abstract class AbstractPersonaManager {
 
 	/**
-	 * 
+	 * Metodo que nos permite autenticar a un empleado del restaurante y una vez se
+	 * autentique podrá acceder al sistema para realizar las funcionalidades correspondientes
 	 * @param user
 	 * @param password
 	 */

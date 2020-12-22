@@ -20,23 +20,47 @@ public class CamareroManager extends AbstractPersonaManager{
 	ArrayList<Mesa> asignadas = new ArrayList<Mesa>();
 	ArrayList<Comanda> comandas = new ArrayList<Comanda>();
 	
-	
+	/**
+	 * Constructor del objeto CamareroManager
+	 * @param camarero
+	 */
 	public CamareroManager(Camarero camarero) {
 		this.camarero = camarero;
 	}
 		
+	/**
+	 * get que nos devuelve el objeto Camarero que pertenece a CamareroManager
+	 * @return Camarero
+	 */
 	public Camarero getCamarero() {
 		return camarero;
 	}
 
+	/**
+	 * Metodo que nos permite modificar el atributop camarero una vez CamareroManager ha sido creado
+	 * @param camarero
+	 */
 	public void setCamarero(Camarero camarero) {
 		this.camarero = camarero;
 	}
 
+	/**
+	 * Metodo que devuelve la mesa que esta siendo atendida por el camarero
+	 * @return Mesa
+	 */
 	public Mesa getMesaAntendida() {
 		return mesaAntendida;
 	}
 
+	/**
+	 * Metodo que nos permite cambiar la mesa que esta atendiendo el camarero por otra diferente
+	 * dejando de atender a la anterior
+	 * @param mesaAtendida
+	 */
+	/**
+	 * Metodo que devuelve la mesa que esta siendo atendida por el camarero
+	 * @return Mesa
+	 */
 	public void setMesaAntendida(Mesa mesaAntendida) {
 		this.mesaAntendida = mesaAntendida;
 	}
@@ -49,6 +73,12 @@ public class CamareroManager extends AbstractPersonaManager{
 		this.asignadas = asignadas;
 	}
 
+	/**
+	 * Metodo que nos permite comprobar si las cantidades de ingredientes que contiene cada plato,
+	 * que forma la comanda esta disponible en el alamacén para poder realizar los platos
+	 * @param ingredientesComandas
+	 * @return boolean
+	 */
 	public static boolean consultarDisponibilidadComanda(ArrayList<Ingrediente> ingredientesComanda) throws IOException {
 		ArrayList<Ingrediente> almacen = new ArrayList<Ingrediente>();
 
@@ -67,11 +97,11 @@ public class CamareroManager extends AbstractPersonaManager{
 		return true;
 	}
 
-	public void cambiarEstadoComanda() {
-		// TODO - implement Camarero.cambiarEstadoComanda
-		throw new UnsupportedOperationException();
-	}
-
+	/**
+	 * Metodo que nos recoge todos los alimentos que hay en la base de dato, con el fin de decirle al cliente que puede pedir,
+	 * para ello nos ayudamos de la clase AlimentoDAO que es la clase que se conecta con la base de datos
+	 * @return ArrayList<Alimento>
+	 */
 	public ArrayList<Alimento> getMenu() {
 		System.out.println("------MENU------");
 		ArrayList<Alimento> alimentos = new ArrayList<Alimento>();
@@ -86,17 +116,12 @@ public class CamareroManager extends AbstractPersonaManager{
 		}
 		return alimentos;
 	}
-
-	public void consultarDisponibilidad() {
-		// TODO - implement Camarero.cambiarEstadoComanda
-		throw new UnsupportedOperationException();
-	}
-
-	public void pedircuenta() {
-		// TODO - implement Camarero.cambiarEstadoComanda
-		throw new UnsupportedOperationException();
-	}
 	
+	/**
+	 * Metodo que nos permite obtener de la base de datos una lista con las mesas
+	 * ya asignadas, se hace uso de MesaDAO para obtener las mesas.
+	 * @return void
+	 */
 	public void mesasAsignadas() {
 		System.out.println("------MESAS ASIGNADAS------");
 		ArrayList<Mesa> mesas = new ArrayList<Mesa>();
@@ -111,7 +136,14 @@ public class CamareroManager extends AbstractPersonaManager{
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * Metodo para coger comandas consiste basicamente en una vez ya tienes cogida
+	 * la comanda de la mesa, lo que haces es insertarla en la base de datos si no es vacia;
+	 * para la inserción de la comanda a la base de datos haremos uso de la clase ComandaDAO
+	 * @param c
+	 * @return void
+	 */
 	public void cogerComanda(Comanda c) {
 		try {
 
@@ -146,7 +178,12 @@ public class CamareroManager extends AbstractPersonaManager{
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Metodo que nos inserta todos los ingredientes de todos los platos de una comanda para posteriormente
+	 * consultar la disponibilidad
+	 * @param ingredientes
+	 * @return ArrayList<Ingrediente>()
+	 */
 	public ArrayList<Ingrediente> getIngredientesComanda(ArrayList<Ingrediente> ingredientes) {
 		ArrayList<Ingrediente> ingredientesComandas = new ArrayList<Ingrediente>();
 		Collections.sort(ingredientes);
@@ -166,6 +203,10 @@ public class CamareroManager extends AbstractPersonaManager{
 		return ingredientesComandas;
 	}
 	
+	/**
+	 * Notifica al cocinero cuando se cierra la comanda
+	 * @return void
+	 */
 	public void notifyCocinero() {
 		System.out.println("AVISANDO A COCINEROS Y CAMAREROS DE BARRA");
 	}
