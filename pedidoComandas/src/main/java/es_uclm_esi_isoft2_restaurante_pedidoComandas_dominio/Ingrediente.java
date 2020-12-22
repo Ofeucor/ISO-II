@@ -33,46 +33,78 @@ public class Ingrediente implements Comparable<Ingrediente>{
 	}
 
 	/**
-	 * Devuel
-	 * @param idIngrediente
-	 * @param idIngrediente
-	 * @param cantidad
+	 * Devuelve el identificador de ingrediente
+	 * @return int
 	 */
 	public int getIdIngrediente() {
 		return this.idIngrediente;
 	}
 
+	/**
+	 * Devuelve el nombre de ingrediente
+	 * @return String
+	 */
 	public String getNombre() {
 		return this.nombre;
 	}
 
+	/**
+	 * Devuelve la cantidad de un ingrdiente
+	 * @return float
+	 */
 	public float getCantidad() {
 		return cantidad;
 	}
 
 	@Override
+	/**
+	 * Devuelve en forma de cadena toda la informacion de ingrediente
+	 * @return String
+	 */
 	public String toString() {
 		return "Ingrediente [idIngrediente=" + idIngrediente + ", nombre=" + ((nombre == null) ? "null" : nombre)
 				+ ", cantidad=" + cantidad + "]";
 	}
 
+	/**
+	 * Modifica el identificador de ingrdiente
+	 * @param idIngrediente
+	 */
 	public void setIdIngrediente(int idIngrediente) {
 		this.idIngrediente = idIngrediente;
 	}
 
+	/**
+	 * Modifica el nombre de ingrediente
+	 * @param nombre
+	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
+	/**
+	 * Modifica la cantidad de ingrediente
+	 * @param cantidad
+	 */
 	public void setCantidad(float cantidad) {
 		this.cantidad = cantidad;
 	}
 
 	@Override
+	/**
+	 * Compara si 2 objetos ingrediente son iguales
+	 * @param obj
+	 * @return boolean
+	 */
 	public boolean equals(Object obj) {
 		return(this.getIdIngrediente() == ((Ingrediente) obj).getIdIngrediente());
 	}
 
+	/**
+	 * Nos permite compara si 2 ingredientes son iguales
+	 * @param o
+	 * @return int
+	 */
 	public int compareTo(Ingrediente o) {
 		if(this.getIdIngrediente() < o.getIdIngrediente())
 			return -1;

@@ -19,7 +19,6 @@ public class Camarero extends Persona {
 
 	/**
 	 * Método toString para mostrar la información del camarero
-	 * @return
 	 */
 	public String toString() {
 		return "Camarero [getDni()=" + getDni() + ", getNombre()=" + getNombre() + ", getApellidos()=" + getApellidos()

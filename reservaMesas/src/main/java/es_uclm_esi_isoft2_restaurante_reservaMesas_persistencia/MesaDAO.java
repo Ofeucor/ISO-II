@@ -26,7 +26,6 @@ public class MesaDAO {
 	 * Método para obtener todas las mesas de un restaurante
 	 * 
 	 * @param idRestaurante
-	 * @return
 	 * @throws IOException
 	 */
 	public static ArrayList<Mesa> getMesas(int idRestaurante) throws IOException {

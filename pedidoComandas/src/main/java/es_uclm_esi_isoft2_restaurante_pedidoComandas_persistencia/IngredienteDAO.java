@@ -44,7 +44,7 @@ public class IngredienteDAO {
 //	}
 
 	/**
-	 * 
+	 * Nos permite obtener un ingrediente de la base de datos para un cierto restaurante
 	 * @param idIngrediente
 	 * @param idRestaurante
 	 */
@@ -88,9 +88,9 @@ public class IngredienteDAO {
 	}
 	
 	/**
-	 * 
+	 * Nos permite obtener los ingredientes que tiene un plato 
 	 * @param id_Plato
-	 * @return
+	 * @return ArrayList()
 	 * @throws IOException
 	 */
 	public static ArrayList<Ingrediente> getIngredientes(int id_Plato) throws IOException {
@@ -138,6 +138,13 @@ public class IngredienteDAO {
 		}
 	}
 
+	/**
+	 * Nos permite transformar cada cadena de texto obtenida de la base de datos al ejecutar getIngrediente
+	 * en un objeto del tipo Ingrediente
+	 * 
+	 * @param r
+	 * @param fromAlimento
+	 */
 	public static Ingrediente stringToIngrediente(String r, boolean fromAlimento) {
 		StringTokenizer st = new StringTokenizer(r, " ");
 		Ingrediente ingrediente = null;

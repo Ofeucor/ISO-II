@@ -80,7 +80,7 @@ public class Comanda {
 
 	/**
 	 * Devuelve la lista de alimentos que contiene la comanda
-	 * @return String
+	 * @return ArrayList
 	 */
 	public ArrayList<Alimento> getAlimentos() {
 		return alimentos;
@@ -88,7 +88,7 @@ public class Comanda {
 
 	/**
 	 * Modifica los alimentos que tiene una comanda
-	 * @return void
+	 * @param alimentos
 	 */
 	public void setAlimentos(ArrayList<Alimento> alimentos) {
 		this.alimentos = alimentos;
@@ -105,7 +105,6 @@ public class Comanda {
 	/**
 	 * Modifica el estado de la comanda
 	 * @param estaPreparada
-	 * @return void
 	 */
 	public void setEstaPreparada(boolean estaPreparada) {
 		this.estaPreparada = estaPreparada;
@@ -114,7 +113,6 @@ public class Comanda {
 	/**
 	 * Modifica el identificador de comanda
 	 * @param idComanda
-	 * @return void
 	 */
 	public void setIdComanda(int idComanda) {
 		this.idComanda = idComanda;
@@ -123,7 +121,6 @@ public class Comanda {
 	/**
 	 * Modifica la fecha de la comanda
 	 * @param fecha
-	 * @return void
 	 */
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
@@ -132,7 +129,6 @@ public class Comanda {
 	/**
 	 * Modifica la fecha de la comanda
 	 * @param hora
-	 * @return void
 	 */
 	public void setHora(String hora) {
 		this.hora = hora;

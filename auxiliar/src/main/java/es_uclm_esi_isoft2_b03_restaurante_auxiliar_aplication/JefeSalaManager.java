@@ -28,7 +28,6 @@ public class JefeSalaManager extends AbstractPersonaManager{
 	
 	 * @param datosCliente
 	 * @param fecha
-	 * @return void
 	 */
 	public void realizarReserva(Date fecha, String datosCliente) {
 		// TODO - implement JefeSalaManager.realizarReserva
@@ -44,9 +43,9 @@ public class JefeSalaManager extends AbstractPersonaManager{
 	/**
 	 * Método para asignar mesa al cliente una vez llega el cliente al restaurante, se le asigna una mesa libre
 	 * esa asiganación se verá reflejada en la base de datos; se hace uso de la clase MesaDAO para la conexión con la base de datos
+	 * 
 	 * @param idMesa
 	 * @param idCamarero
-	 * @return void
 	 */
 	public void asignarMesa(int idMesa, String idCamarero) {
 		try {

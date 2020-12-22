@@ -16,8 +16,9 @@ import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Mesa;
 public class AlimentoDAO {
 
 	/**
-	 * 
-	 * @return
+	 * Metodo a traves del cual obtenemos todos los alimentos que se encuentran en la base de datos,7
+	 * es decir; tanto platos de comida como bebidas con el fin de ofrecerselo a los clientes
+	 * @return ArrayList()
 	 * @throws IOException
 	 */
 	public static ArrayList <Alimento> getMenu() throws IOException {
@@ -57,7 +58,7 @@ public class AlimentoDAO {
 	}
 
 	/**
-	 * 
+	 * Metodo que nos permite insertar un plato en la base de datos 
 	 * @param alimento
 	 * @throws IOException
 	 */
@@ -129,7 +130,11 @@ public class AlimentoDAO {
 //		return ingrediente;
 //	}
 //	
-	
+	/**
+	 * Nos permite transfor las cadenas de texto provenientes de la base de datos en objetos de tipo Alimento
+	 * @param r
+	 * @return Alimento
+	 */
 	public static Alimento stringToAlimento(String r) {
 		StringTokenizer st = new StringTokenizer(r, ",");
 		Alimento alimento = null;

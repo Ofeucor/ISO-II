@@ -14,6 +14,7 @@ import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Reserva;
 public class ComandaDAO {
 
 	/**
+	 * Nos permite insertar una comanda en la base de datos
 	 * 
 	 * @param id_Comanda
 	 * @param id_Mesa
@@ -53,6 +54,16 @@ public class ComandaDAO {
 		}
 	}
 
+	/**
+	 * Nos permite insertar una comanda en la base de datos sin identificador en la base de datos
+	 * se pondra un identificador aleatorio
+	 * 
+	 * @param id_Mesa
+	 * @param id_Restaurante
+	 * @param id_Plato
+	 * @param cantidad
+	 * @throws IOException
+	 */
 	public static int insertComanda(int id_Mesa, int id_Restaurante, int id_Plato, int cantidad) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpInsertComanda.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();

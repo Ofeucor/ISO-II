@@ -83,7 +83,6 @@ public class Alimento implements Comparable<Alimento>{
 	/**
 	 * Modifica el tipo de alimento
 	 * @param tipo
-	 * @return void
 	 */
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
@@ -92,7 +91,6 @@ public class Alimento implements Comparable<Alimento>{
 	/**
 	 * Modifica el identificador de alimento
 	 * @param idAlimento
-	 * @return void
 	 */
 	public void setIdAlimento(int idAlimento) {
 		this.idAlimento = idAlimento;
@@ -101,7 +99,6 @@ public class Alimento implements Comparable<Alimento>{
 	/**
 	 * Modifica el nombre del alimento
 	 * @param nombre
-	 * @return void
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -110,7 +107,6 @@ public class Alimento implements Comparable<Alimento>{
 	/**
 	 * Modifica el precio del alimento
 	 * @param precio
-	 * @return void
 	 */
 	public void setPrecio(double precio) {
 		this.precio = precio;
