@@ -9,23 +9,30 @@ public class Mesa {
 	private int idMesa;
 	private int estado = 0;
 	private int numSillas;
-	
+
 	/**
 	 * Constructor de mesa
+	 * 
 	 * @param idMesa
 	 * @param estado
 	 * @param numSillas
 	 */
-	public Mesa(int idMesa, int estado,  int numSillas) {
+	public Mesa(int idMesa, int estado, int numSillas) {
 		this.idMesa = idMesa;
 		this.estado = estado;
 		this.numSillas = numSillas;
 	}
 
-	public Mesa() {};
+	public Mesa(int idMesa) {
+		this.idMesa = idMesa;
+	}
+
+	public Mesa() {
+	};
 
 	/**
 	 * Mñetodo para obtener el identificador de la mesa
+	 * 
 	 * @return id de la mesa
 	 */
 	public int getIdMesa() {
@@ -34,6 +41,7 @@ public class Mesa {
 
 	/**
 	 * Método para obtener el número de sillas que tiene una mesa
+	 * 
 	 * @return número de sillas
 	 */
 	public int getNumSillas() {
@@ -42,6 +50,7 @@ public class Mesa {
 
 	/**
 	 * Método para obtener el estado en el que se encuentra una mesa
+	 * 
 	 * @return estadoMesa
 	 */
 	public int getEstado() {
@@ -50,10 +59,17 @@ public class Mesa {
 
 	/**
 	 * Método para cambiar el estado en el que se encuentra usa mesa
+	 * 
 	 * @param estado
 	 */
 	public void setEstado(int estado) {
 		this.estado = estado;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Mesa o = (Mesa) obj;
+		return (o.getIdMesa() == this.getIdMesa());
 	}
 
 	/**
@@ -61,6 +77,6 @@ public class Mesa {
 	 */
 	public String toString() {
 		return "Mesa [idMesa=" + idMesa + ", estado=" + estado + ", numSillas=" + numSillas + "]";
-	
-	}	
+
+	}
 }
