@@ -6,18 +6,16 @@ import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-import es_uclm_esi_isoft2_restaurante_pedidoComandas_dominio.Alimento;
-import es_uclm_esi_isoft2_restaurante_pedidoComandas_dominio.Comanda;
-import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Camarero;
-import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.JefeSala;
-import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Mesa;
-import es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO;
-import es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO;
+import es_uclm_esi_isoft2_restaurante_pedidoComandas_dominio.*;
+import es_uclm_esi_isoft2_restaurante_pedidoComandas_persistencia.IngredienteDAO;
+import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
+import es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.*;
 
 public class Main {
 
@@ -33,55 +31,17 @@ public class Main {
 
 		System.out.println("Dime tu contraseña:");
 		password = sc.next();
-
-		/*try {
-			PersonaDAO.insertPersona(new Camarero("00000003B", "Pablo", "Peco", 1));
-			PersonaDAO.insertPersona(new Camarero("00000004B", "Lucia", "Diaz", 1));
-			PersonaDAO.insertPersona(new Camarero("00000005B", "Ana", "Parras", 2));
-			PersonaDAO.insertPersona(new Camarero("00000006B", "losif", "Stalin", 1));
-			PersonaDAO.insertPersona(new Camarero("00000007B", "Juan", "Smith", 2));
-			
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}*/
-
-		/*//Para tener mesas
-		 * for (int j=0; j < 2;j ++)
-			for(int i = 1; i < 10; i++)
-			Tools.insertMesa(new Mesa(i, ((int)(Math.random()*9)),  (((int)(Math.random()*3))*2)+1), j+1);*/
-		
-		//Devuelve una mesa dado un idMesa e idRestaurante
-		/*try {
-			Mesa mesaprueba = MesaDAO.getMesa(1, 1);
-			System.out.println(mesaprueba.toString());
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}*/
 		
 		Object o;
 		try {
 			
 			//[["Manuel","LopezMartin","00000001A","JefeSala","LopezMartin00000001A","1"]]
 			o = PersonaDAO.autenticarse(dni, password);
-			
-			//p1.getCamareros();
-			//p1.asignarMesa(1,2);
-			//p1.getReservas();
-			//p1.getMesas();
-			//p1.getMesasLibres();
-			
-			/*Date fecha1 = new Date();
-			p1.realizarReserva(fecha1,"Julio5Personas", 1);*/
-
-			
-
+	
 			if(o.getClass().getName().equals("es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.JefeSala")) {
 				System.out.println("Jefe");
 				JefeSala p1 = (JefeSala) o;
 				jefeSalaActions(new JefeSalaManager(p1));
-				//p1.realizarReserva(new Date(), "Julio5Personas", null, 1);
-				//System.out.println("Aqui");
 			}else if(o.getClass().getName().equals("es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Camarero")){
 				System.out.println("Camarero");
 				Camarero p1 = (Camarero) o;
@@ -164,21 +124,42 @@ public class Main {
 				break;
 			case 1:
 				try {
-				int registroid = MesaDAO.atender(c.getMesaAntendida(), 5/*Comensales*/, c.getCamarero().getIdRestaurante(), c.getCamarero().getDni());
+				//int registroid = MesaDAO.atender(c.getMesaAntendida(), 5/*Comensales*/, c.getCamarero().getIdRestaurante(), c.getCamarero().getDni());
 				List<Alimento> alimentos = new LinkedList<Alimento>();
 				int opt;
-				System.out.println("Indica Plato");
-				while((opt=sc.nextInt()) != -1){
-					alimentos.add(new Alimento(opt));
-					System.out.println("Indica Plato...");
-				}
+				boolean ingredientesSuficientes;
+				ArrayList<Ingrediente> ingredientesComandas, ingredientes;
 				
-				Comanda comanda = new Comanda("2020/12/26", "1:56:23", new ArrayList<Alimento>(alimentos));
-				c.cogerComanda(comanda);
-				registroid = MesaDAO.finalizarAtender(c.getMesaAntendida(), 5/*Comensales*/, c.getCamarero().getIdRestaurante(), c.getCamarero().getDni(), registroid);
+				do {
+					System.out.println("Indica Plato");
+					while((opt=sc.nextInt()) != -1){
+						alimentos.add(new Alimento(opt));
+						System.out.println("Indica Plato...");
+					}
+					
+					Comanda comanda = new Comanda("2020/12/26", "1:56:23", new ArrayList<Alimento>(alimentos));
+					ingredientes = new ArrayList<Ingrediente>();
+					for(Alimento a : comanda.getAlimentos())
+						ingredientes.addAll(IngredienteDAO.getIngredientes(a.getIdAlimento()));
+					
+					ingredientesComandas = c.getIngredientesComanda(ingredientes);
+					
+					ingredientesSuficientes = CamareroManager.consultarDisponibilidadComanda(ingredientesComandas);
+					
+						if(!ingredientesSuficientes) {
+							System.out.println("Parece que nos falta algun ingrediente para poder realizar todos los platos");
+							ingredientesComandas.clear();
+							alimentos.clear();
+						}
+				
+				}while(!ingredientesSuficientes);
+				
+
+				//c.cogerComanda(comanda);
+				//registroid = MesaDAO.finalizarAtender(c.getMesaAntendida(), 5/*Comensales*/, c.getCamarero().getIdRestaurante(), c.getCamarero().getDni(), registroid);
 				c.notifyCocinero();
 				}catch(Exception e) {
-					
+					e.printStackTrace();
 				}
 				break;
 			case 2:

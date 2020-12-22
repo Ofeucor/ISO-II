@@ -109,56 +109,7 @@ public class AlimentoDAO {
 		throw new UnsupportedOperationException();
 	}
 
-	/*************************************************************************************
-	 * Con esta consulta
-	 * 
-	 * @date 11/12/2020
-	 * @author Javier Ã�lvarez
-	 *************************************************************************************/
-	public static ArrayList<Ingrediente> getIngredientes(Alimento plato) throws IOException {
-		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetIngredientes.php");
-		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-		con.setRequestMethod("POST");
-		con.setRequestProperty("User-Agent", "Mozilla/5.0");
-		con.setDoOutput(true);
-
-		OutputStream directConnection = con.getOutputStream();
-
-		directConnection.write(("Id_plato=" + plato.getIdAlimento()).getBytes());
-		directConnection.flush();
-		directConnection.close();
-
-		int responseCode = con.getResponseCode();
-		System.out.println("POST Response Code :: " + responseCode);
-		if (responseCode == HttpURLConnection.HTTP_OK) { // success
-			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-			String inputLine;
-			StringBuffer response = new StringBuffer();
-
-			while ((inputLine = in.readLine()) != null) {
-				response.append(inputLine);
-			}
-			in.close();
-
-			// print result
-			System.out.println(response.toString());
-
-			ArrayList<Ingrediente> array = new ArrayList<Ingrediente>();
-			StringTokenizer st = new StringTokenizer(response.toString(), "]");
-
-			if (!response.toString().equals("[]"))
-				while (st.hasMoreTokens()) {
-					array.add(stringToIngrediente(st.nextToken().replace("[", "").replace(",", " ")));
-				}
-			/*for (Ingrediente f : array)
-				System.out.println(f.toString());*/
-			
-			return array;
-		} else {
-			System.out.println("NO FUNCIONÃ“");
-			return null;
-		}
-	}
+	
 
 	/*************************************************************************************
 	 * A partir de un String, que es un ingrediete devuelto por la consulta a la

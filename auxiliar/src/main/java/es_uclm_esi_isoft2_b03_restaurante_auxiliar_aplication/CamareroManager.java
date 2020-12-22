@@ -49,19 +49,18 @@ public class CamareroManager extends AbstractPersonaManager{
 		this.asignadas = asignadas;
 	}
 
-	public static boolean consultarDisponibilidad(Alimento alimento) throws IOException {
-		ArrayList<Ingrediente> ingredientePlato = AlimentoDAO.getIngredientes((Alimento) alimento);
+	public static boolean consultarDisponibilidadComanda(ArrayList<Ingrediente> ingredientesComanda) throws IOException {
 		ArrayList<Ingrediente> almacen = new ArrayList<Ingrediente>();
 
-		for (Ingrediente i : ingredientePlato) {
+		for (Ingrediente i : ingredientesComanda) {
 			almacen.add(IngredienteDAO.getIngrediente(i.getIdIngrediente(), 1));
 		}
 
-		System.out.println("Los ingredientes requeridos para " + alimento.getNombre() + " son\n");
-		for (int i = 0; i < ingredientePlato.size(); i++) {
-			System.out.println("\t" + ingredientePlato.get(i).getNombre() + " " +
-					ingredientePlato.get(i).getCantidad() + "- " + almacen.get(i).getCantidad());
-			if (ingredientePlato.get(i).getCantidad() > almacen.get(i).getCantidad())
+		System.out.println("Los ingredientes requeridos para la comanda son\n");
+		for (int i = 0; i < ingredientesComanda.size(); i++) {
+			System.out.println("\t" + ingredientesComanda.get(i).getNombre() + " " +
+					ingredientesComanda.get(i).getCantidad() + "- " + almacen.get(i).getCantidad());
+			if (ingredientesComanda.get(i).getCantidad() > almacen.get(i).getCantidad())
 				return false;
 		}
 
@@ -146,6 +145,25 @@ public class CamareroManager extends AbstractPersonaManager{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public ArrayList<Ingrediente> getIngredientesComanda(ArrayList<Ingrediente> ingredientes) {
+		ArrayList<Ingrediente> ingredientesComandas = new ArrayList<Ingrediente>();
+		Collections.sort(ingredientes);
+
+		
+		while(!ingredientes.isEmpty()) {
+			int rep = Collections.frequency(ingredientes, ingredientes.get(0));
+			for(int i = 1; i < rep;i++) {
+				ingredientes.get(0).setCantidad(ingredientes.get(0).getCantidad()+ingredientes.get(1).getCantidad());
+				ingredientes.remove(1);
+			}
+			ingredientesComandas.add(new Ingrediente(ingredientes.get(0).getIdIngrediente(), 
+					ingredientes.get(0).getNombre(), ingredientes.get(0).getCantidad()));	
+			ingredientes.remove(0);
+		}
+		
+		return ingredientesComandas;
 	}
 	
 	public void notifyCocinero() {

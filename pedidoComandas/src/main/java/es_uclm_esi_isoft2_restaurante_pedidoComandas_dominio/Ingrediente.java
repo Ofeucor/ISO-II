@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 
 
-public class Ingrediente {
+public class Ingrediente implements Comparable<Ingrediente>{
 
 	private int idIngrediente;
 	private String nombre;
@@ -42,5 +42,31 @@ public class Ingrediente {
 	public String toString() {
 		return "Ingrediente [idIngrediente=" + idIngrediente + ", nombre=" + ((nombre == null) ? "null" : nombre)
 				+ ", cantidad=" + cantidad + "]";
+	}
+
+	public void setIdIngrediente(int idIngrediente) {
+		this.idIngrediente = idIngrediente;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setCantidad(float cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return(this.getIdIngrediente() == ((Ingrediente) obj).getIdIngrediente());
+	}
+
+	public int compareTo(Ingrediente o) {
+		if(this.getIdIngrediente() < o.getIdIngrediente())
+			return -1;
+		else if(this.getIdIngrediente() > o.getIdIngrediente())
+			return 1;
+		else 
+			return 0;
 	}
 }
