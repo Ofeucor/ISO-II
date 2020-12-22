@@ -11,9 +11,8 @@ public class Alimento implements Comparable<Alimento>{
 	private String tipo;
 	
 	/**
+	 * 
 	 * @param idAlimento
-	 * @param nombre
-	 * @param precio
 	 */
 
 	public Alimento(int idAlimento) {

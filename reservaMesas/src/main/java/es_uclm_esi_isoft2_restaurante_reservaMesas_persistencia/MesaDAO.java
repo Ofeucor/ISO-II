@@ -192,9 +192,11 @@ public class MesaDAO {
 	 */
 
 	/**
-	 * @throws IOException @throws
-	 * 
-	 * @param idRestaurante @throws
+	 * Metodo que devuelve las mesas asignadas
+	 * @param idRestaurante
+	 * @param idCamarero
+	 * @return
+	 * @throws IOException
 	 */
 	public static ArrayList<Mesa> getMesasAsignadas(int idRestaurante, String idCamarero) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetMesasAsignadas.php");

@@ -81,8 +81,8 @@ public class JefeSalaManager extends AbstractPersonaManager{
 	}
 
 	/**
-	 * 
-	 * @param date
+	 * Metodo para obtener una reserva
+	 * @return reserva
 	 */
 	public ArrayList<Reserva> getReservas(){
 		ArrayList<Reserva> reservas = null;

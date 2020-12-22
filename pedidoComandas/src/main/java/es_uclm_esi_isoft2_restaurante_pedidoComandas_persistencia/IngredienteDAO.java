@@ -87,12 +87,12 @@ public class IngredienteDAO {
 		}
 	}
 	
-	/*************************************************************************************
-	 * Con esta consulta
+	/**
 	 * 
-	 * @date 11/12/2020
-	 * @author Javier Ã�lvarez
-	 *************************************************************************************/
+	 * @param id_Plato
+	 * @return
+	 * @throws IOException
+	 */
 	public static ArrayList<Ingrediente> getIngredientes(int id_Plato) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetIngredientes.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();

@@ -1,6 +1,10 @@
 package es_uclm_esi_isoft2_restaurante_pedidoComandas_dominio;
 
 import java.util.ArrayList;
+/**
+ * 
+ *
+ */
 
 public class Comanda {
 

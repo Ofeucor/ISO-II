@@ -15,7 +15,11 @@ public class ComandaDAO {
 
 	/**
 	 * 
-	 * @param comanda
+	 * @param id_Comanda
+	 * @param id_Mesa
+	 * @param id_Restaurante
+	 * @param id_Plato
+	 * @param cantidad
 	 * @throws IOException
 	 */
 	public static void insertComanda(int id_Comanda, int id_Mesa, int id_Restaurante, int id_Plato, int cantidad)

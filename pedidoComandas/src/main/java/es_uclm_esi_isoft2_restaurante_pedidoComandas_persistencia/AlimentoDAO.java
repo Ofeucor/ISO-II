@@ -15,12 +15,11 @@ import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Mesa;
 
 public class AlimentoDAO {
 
-	/*************************************************************************************
-	 * Con esta consulta
+	/**
 	 * 
-	 * @date 05/12/2020
-	 * @author David GutiÃ©rrez
-	 *************************************************************************************/
+	 * @return
+	 * @throws IOException
+	 */
 	public static ArrayList <Alimento> getMenu() throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetAlimento.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -57,12 +56,11 @@ public class AlimentoDAO {
 		return alimentos;
 	}
 
-	/*************************************************************************************
-	 * Con esta consulta
+	/**
 	 * 
-	 * @date 05/12/2020
-	 * @author AndrÃ©s GonzÃ¡lez
-	 *************************************************************************************/
+	 * @param alimento
+	 * @throws IOException
+	 */
 	public static void insertPlato(Alimento alimento) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpInsertAlimento.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -98,12 +96,6 @@ public class AlimentoDAO {
 		}
 	}
 
-	/*************************************************************************************
-	 * Con esta consulta
-	 * 
-	 * @date 11/12/2020
-	 * @author Julio Molina
-	 *************************************************************************************/
 //	public Alimento deletePlato(int idPlato) {
 //		// TODO - implement PlatoDAO.deletePlato
 //		throw new UnsupportedOperationException();
@@ -111,14 +103,14 @@ public class AlimentoDAO {
 
 	
 
-	/*************************************************************************************
+	/**
 	 * A partir de un String, que es un ingrediete devuelto por la consulta a la
 	 * BBDD, parseamos y lo convertimos en un objeto Ingrediente con el que poder
 	 * trabajar. Todos los ingredientes del plato los metemos en un ArrayList
-	 * 
-	 * @date 11/12/2020
-	 * @author Javier Ã�lvarez
-	 *************************************************************************************/
+	 * @param r
+	 * @return
+	 */
+	
 //	public static Ingrediente stringToIngrediente(String r) {
 //		StringTokenizer st = new StringTokenizer(r, " ");
 //		Ingrediente ingrediente = null;
