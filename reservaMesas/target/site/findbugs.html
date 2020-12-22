@@ -114,25 +114,25 @@ reservaMesas
 <td>es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Reserva.getFecha() may expose internal representation by returning Reserva.fecha</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Reserva.html#L24">24</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Reserva.html#L43">43</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>new es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Reserva(int, Date, String) may expose internal representation by storing an externally mutable object into Reserva.fecha</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Reserva.html#L19">19</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Reserva.html#L34">34</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>new es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Reserva(Date, String) may expose internal representation by storing an externally mutable object into Reserva.fecha</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Reserva.html#L13">13</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Reserva.html#L22">22</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Reserva.setFecha(Date) may expose internal representation by storing an externally mutable object into Reserva.fecha</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Reserva.html#L28">28</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Reserva.html#L51">51</a></td>
 <td>Medium</td></tr></table></div><a name="es_uclm_esi_isoft2_restaurante_reservaMesas_interfaz.Main"></a>
 <div class="section">
 <h3><a name="es_uclm_esi_isoft2_restaurante_reservaMesas_interfaz.Main"></a>es_uclm_esi_isoft2_restaurante_reservaMesas_interfaz.Main</h3>
@@ -162,61 +162,61 @@ reservaMesas
 <td>Dead store to idRestaurante in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO.stringToMesa(String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L223">223</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L257">257</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO.asignarMesa(int, String, int): new java.io.InputStreamReader(InputStream)</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L117">117</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L139">139</a></td>
 <td>High</td></tr>
 <tr class="a">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO.asignarMesa(int, String, int): String.getBytes()</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L110">110</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L132">132</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO.getMesa(int, int): new java.io.InputStreamReader(InputStream)</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L77">77</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L92">92</a></td>
 <td>High</td></tr>
 <tr class="a">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO.getMesa(int, int): String.getBytes()</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L69">69</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L84">84</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO.getMesas(int): new java.io.InputStreamReader(InputStream)</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L36">36</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L45">45</a></td>
 <td>High</td></tr>
 <tr class="a">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO.getMesas(int): String.getBytes()</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L29">29</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L38">38</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO.getMesasLibres(int): new java.io.InputStreamReader(InputStream)</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L189">189</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L218">218</a></td>
 <td>High</td></tr>
 <tr class="a">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO.getMesasLibres(int): String.getBytes()</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L182">182</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L211">211</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Switch statement found in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO.stringToMesa(String) where default case is missing</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L225">225-234</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.html#L259">259-268</a></td>
 <td>Medium</td></tr></table></div><a name="es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO"></a>
 <div class="section">
 <h3><a name="es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO"></a>es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO</h3>
@@ -231,43 +231,43 @@ reservaMesas
 <td>Dead store to password in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO.stringToPersona(String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L102">102</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L128">128</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO.autenticarse(String, String): new java.io.InputStreamReader(InputStream)</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L32">32</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L44">44</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO.autenticarse(String, String): String.getBytes()</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L25">25</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L37">37</a></td>
 <td>High</td></tr>
 <tr class="a">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO.getCamareros(int): new java.io.InputStreamReader(InputStream)</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L141">141</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L173">173</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO.getCamareros(int): String.getBytes()</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L133">133</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L165">165</a></td>
 <td>High</td></tr>
 <tr class="a">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO.insertPersona(Persona): new java.io.InputStreamReader(InputStream)</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L75">75</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L92">92</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO.insertPersona(Persona): String.getBytes()</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L68">68</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.html#L85">85</a></td>
 <td>High</td></tr></table></div><a name="es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.ReservaDAO"></a>
 <div class="section">
 <h3><a name="es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.ReservaDAO"></a>es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.ReservaDAO</h3>
@@ -282,31 +282,31 @@ reservaMesas
 <td>Dead store to idRestaurante in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.ReservaDAO.stringToReserva(String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/ReservaDAO.html#L70">70</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/ReservaDAO.html#L87">87</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.ReservaDAO.getReservas(int): new java.io.InputStreamReader(InputStream)</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/ReservaDAO.html#L98">98</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/ReservaDAO.html#L121">121</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.ReservaDAO.getReservas(int): String.getBytes()</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/ReservaDAO.html#L91">91</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/ReservaDAO.html#L114">114</a></td>
 <td>High</td></tr>
 <tr class="a">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.ReservaDAO.insertReserva(Reserva, int): new java.io.InputStreamReader(InputStream)</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/ReservaDAO.html#L40">40</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/ReservaDAO.html#L49">49</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Found reliance on default encoding in es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.ReservaDAO.insertReserva(Reserva, int): String.getBytes()</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/ReservaDAO.html#L34">34</a></td>
+<td><a href="./xref/es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/ReservaDAO.html#L43">43</a></td>
 <td>High</td></tr></table></div>
       </div>
     </div>

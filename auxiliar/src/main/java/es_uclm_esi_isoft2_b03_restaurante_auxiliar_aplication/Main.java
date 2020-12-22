@@ -16,6 +16,10 @@ public class Main {
 
 	public final static Scanner sc = new Scanner(System.in);
 	
+	/**
+	 * Método principal de la clase, desde el cuál se ejecutará todo el programa
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		String dni, password;		
 
@@ -89,7 +93,11 @@ public class Main {
 		//JefeSala js1 = (JefeSala)p1.autenticarPersona(dni, password);
 
 	}
-	
+	/**
+	 * Método para obtener todas las acciones que peude realizar el jefe de sala dependiendo
+	 * de la opción que se elija
+	 * @param j
+	 */
 	public static void jefeSalaActions(JefeSalaManager j) {
 		
 		do {
@@ -127,6 +135,9 @@ public class Main {
 		}while(true);
 	}
 	
+	/**
+	 * método para las acciones que tiene disponible el camarero
+	 */
 	public void camareroActions() {
 		System.out.println("1.TomarComanda\n2.VerMenu");
 		switch(sc.nextInt()) {

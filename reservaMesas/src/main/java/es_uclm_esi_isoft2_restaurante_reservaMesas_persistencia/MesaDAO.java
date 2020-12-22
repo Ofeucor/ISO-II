@@ -15,8 +15,17 @@ import java.util.StringTokenizer;
 
 import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
 
+/**
+ * Clase encargada de hacer las peticiones a la base de datos correspondientes a la Mesa
+ * 
+ */
 public class MesaDAO {
-
+	/**
+	 * Método para obtener todas las mesas de un restaurante
+	 * @param idRestaurante
+	 * @return
+	 * @throws IOException
+	 */
 	public static ArrayList<Mesa> getMesas(int idRestaurante) throws IOException{
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetMesas.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -56,7 +65,13 @@ public class MesaDAO {
 
 		return mesas;
 	}
-	
+	/**
+	 * Método para obtener una mesa concreta
+	 * @param idMesa
+	 * @param idRestaurante
+	 * @return
+	 * @throws IOException
+	 */
 	public static Mesa getMesa(int idMesa, int idRestaurante) throws IOException{		
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetMesa.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -98,6 +113,13 @@ public class MesaDAO {
 		return mesa;
 	}
 	
+	/**
+	 * Método para asignar una mesa
+	 * @param idMesa
+	 * @param idCamarero
+	 * @param idRestaurante
+	 * @throws IOException
+	 */
 	public static void asignarMesa(int idMesa, String idCamarero, int idRestaurante) throws IOException{		
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpAsignarMesa.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -170,6 +192,13 @@ public class MesaDAO {
 
 		return null;
 	}*/
+	
+	/**
+	 * Método para obtener las mesas libres de un restaurante determinado
+	 * @param idRestaurante
+	 * @return
+	 * @throws IOException
+	 */
 	public static ArrayList<Mesa> getMesasLibres(int idRestaurante) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetMesasLibres.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -210,6 +239,11 @@ public class MesaDAO {
 		return mesas;
 	}
 
+	/**
+	 * Método para pasar la información de la base de datos a un objeto del tipo Mesa
+	 * @param r
+	 * @return
+	 */
 	private static Mesa stringToMesa(String r) {
 		Mesa mesa=null;
 		

@@ -7,17 +7,29 @@ import java.util.Date;
 import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
 import es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.*;
 
+/**
+ * Clase JefeSalaManager encargada de hacer los métodos correspondientes al Jefe de Sala
+ *
+ */
 public class JefeSalaManager extends AbstractPersonaManager{
 
 
 	JefeSala jefeSala;
 	
-	
+	/**
+	 * Constructor del JefeSala
+	 * @param jefeSala
+	 */
 	public JefeSalaManager(JefeSala jefeSala) {
 
 		this.jefeSala = jefeSala;
 	}
 
+	/**
+	 * Método para realizar una reserva
+	 * @param fecha
+	 * @param datosCliente
+	 */
 	public void realizarReserva(Date fecha, String datosCliente) {
 		// TODO - implement JefeSalaManager.realizarReserva
 		try {
@@ -29,6 +41,11 @@ public class JefeSalaManager extends AbstractPersonaManager{
 		}
 	}
 
+	/**
+	 * Método para asignar una mesa a un camarero
+	 * @param idMesa
+	 * @param idCamarero
+	 */
 	public void asignarMesa(int idMesa, String idCamarero) {
 		try {
 			MesaDAO.asignarMesa(idMesa, idCamarero, jefeSala.getIdRestaurante());
@@ -38,6 +55,10 @@ public class JefeSalaManager extends AbstractPersonaManager{
 		}
 	}
 	
+	/**
+	 * Método para obtener las mesas libres del restaurante
+	 * @return mesas libres
+	 */
 	public ArrayList<Mesa> getMesasLibres() {
 		// TODO - implement JefeSalaManager.getMesas
 		ArrayList<Mesa> mesasLibresRestaurante = new ArrayList<Mesa>();
@@ -52,6 +73,10 @@ public class JefeSalaManager extends AbstractPersonaManager{
 		return mesasLibresRestaurante;
 	}
 	
+	/**
+	 * Método para obtener todas las mesas del restaurante
+	 * @return mesas
+	 */
 	public ArrayList<Mesa> getMesas() {
 		// TODO - implement JefeSalaManager.getMesas
 		ArrayList<Mesa> mesasRestaurante = new ArrayList<Mesa>();
@@ -66,6 +91,10 @@ public class JefeSalaManager extends AbstractPersonaManager{
 		return mesasRestaurante;
 	}
 
+	/**
+	 * Método para obtener los camareros del resturaurante
+	 * @return camareros
+	 */
 	public ArrayList<Camarero> getCamareros() {
 		ArrayList<Camarero> camarerosRestaurante = new ArrayList<Camarero>();
 	
@@ -80,6 +109,10 @@ public class JefeSalaManager extends AbstractPersonaManager{
 		return camarerosRestaurante;
 	}
 
+	/**
+	 * Método para obtener las reservas del resturante
+	 * @return reservas
+	 */
 	public ArrayList<Reserva> getReservas(){
 		ArrayList<Reserva> reservas = null;
 		try {

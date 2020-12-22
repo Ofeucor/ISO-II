@@ -14,9 +14,18 @@ import java.util.StringTokenizer;
 
 import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
 
+/**
+ * lase encargada de hacer las peticiones a la base de datos correspondientes a la Reserva
+ *
+ */
 public class ReservaDAO {
-
-	//public ReservaDAO() {};
+	
+	/**
+	 * Método para insertar una reserva en la base de datos
+	 * @param reserva
+	 * @param idRestaurante
+	 * @throws IOException
+	 */
 	public static void insertReserva(Reserva reserva, int idRestaurante) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpInsertReserva.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -51,12 +60,20 @@ public class ReservaDAO {
 		}
 	}
 
-	
+	/**
+	 * Método para eliminar una reserva en la base de datos
+	 * @param idReserva
+	 */
 	public void deleteReserva(int idReserva) {
 		// TODO - implement ReservaDAO.deleteReserva
 		throw new UnsupportedOperationException();
 	}
 	
+	/**
+	 * Método para pasar la información de la base de datos a un objeto del tipo Reserva
+	 * @param r
+	 * @return
+	 */
 	private static Reserva stringToReserva(String r) {
 		Reserva reserva =null;
 
@@ -79,6 +96,12 @@ public class ReservaDAO {
 		return reserva;
 	}
 	
+	/**
+	 * Método para obtener las reservar de un determinado restaurante
+	 * @param idRestaurante
+	 * @return
+	 * @throws IOException
+	 */
 	public static ArrayList<Reserva> getReservas(int idRestaurante) throws IOException{
 			URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetReservas.php");
 			HttpURLConnection con = (HttpURLConnection) obj.openConnection();

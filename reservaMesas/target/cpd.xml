@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pmd-cpd>
    <duplication lines="26" tokens="184">
-      <file line="29"
+      <file line="38"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\MesaDAO.java"/>
-      <file line="182"
+      <file line="211"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\MesaDAO.java"/>
       <codefragment><![CDATA[		directConnection.write(("IdRestaurante=" + idRestaurante).getBytes());
 		directConnection.flush();
@@ -33,11 +33,11 @@
 			System.out.println("Fallo al obtener las mesas.");]]></codefragment>
    </duplication>
    <duplication lines="20" tokens="116">
-      <file line="110"
+      <file line="132"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\MesaDAO.java"/>
-      <file line="67"
+      <file line="84"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\PersonaDAO.java"/>
-      <file line="33"
+      <file line="42"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\ReservaDAO.java"/>
       <codefragment><![CDATA[		directConnection.write(("Id_Mesa=" + idMesa + "&Id_Restaurante=" + idRestaurante + "&Id_Camarero=" + idCamarero).getBytes());
 		directConnection.flush();
@@ -61,9 +61,9 @@
 			System.out.println("Fallo al obtener la mesa con id: " + idMesa);]]></codefragment>
    </duplication>
    <duplication lines="15" tokens="108">
-      <file line="139"
+      <file line="171"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\PersonaDAO.java"/>
-      <file line="96"
+      <file line="119"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\ReservaDAO.java"/>
       <codefragment><![CDATA[		ArrayList <Camarero> camareros = new ArrayList <Camarero> ();
 		if (responseCode == HttpURLConnection.HTTP_OK) { // success
@@ -82,13 +82,13 @@
 				while(st.hasMoreElements())]]></codefragment>
    </duplication>
    <duplication lines="17" tokens="107">
-      <file line="110"
+      <file line="132"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\MesaDAO.java"/>
-      <file line="25"
+      <file line="37"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\PersonaDAO.java"/>
-      <file line="67"
+      <file line="84"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\PersonaDAO.java"/>
-      <file line="33"
+      <file line="42"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\ReservaDAO.java"/>
       <codefragment><![CDATA[		directConnection.write(("Id_Mesa=" + idMesa + "&Id_Restaurante=" + idRestaurante + "&Id_Camarero=" + idCamarero).getBytes());
 		directConnection.flush();
@@ -109,11 +109,11 @@
 			System.out.println(response.toString());]]></codefragment>
    </duplication>
    <duplication lines="14" tokens="102">
-      <file line="30"
+      <file line="42"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\PersonaDAO.java"/>
-      <file line="139"
+      <file line="171"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\PersonaDAO.java"/>
-      <file line="96"
+      <file line="119"
             path="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\reservaMesas\src\main\java\es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia\ReservaDAO.java"/>
       <codefragment><![CDATA[		System.out.println("POST Response Code :: " + responseCode);
 		if (responseCode == HttpURLConnection.HTTP_OK) { // success
