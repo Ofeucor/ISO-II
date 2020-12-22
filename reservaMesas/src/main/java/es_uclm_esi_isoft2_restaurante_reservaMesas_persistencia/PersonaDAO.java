@@ -11,14 +11,20 @@ import java.util.StringTokenizer;
 
 import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
 
+/**
+ * Clase encargada de hacer las peticiones a la base de datos correspondientes a la Persona
+ *
+ */
 public class PersonaDAO {
-
+	
 	/**
-	 * 
+	 * Método para autenticarse en la base de datos y tener acceso a los casos de uso correspondientes a la
+	 * persona que se autentica
 	 * @param dni
 	 * @param password
+	 * @return
+	 * @throws IOException
 	 */
-	
 	public static Object autenticarse(String dni, String password) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phplogin.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -57,8 +63,9 @@ public class PersonaDAO {
 	}
 
 	/**
-	 * 
+	 * Método para insertar una persona en la base de datos
 	 * @param persona
+	 * @throws IOException
 	 */
 	public static void insertPersona(Persona persona) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpInsertEmpleado.php");
@@ -97,13 +104,18 @@ public class PersonaDAO {
 	}
 
 	/**
-	 * 
+	 * Método para eliminar una perosna de la base de datos
 	 * @param dni
 	 */
 	public void deletePersona(int dni) {
 		
 	}
 
+	/**
+	 * Método para pasar la información de la base de datos a un objeto del tipo Persona
+	 * @param r
+	 * @return
+	 */
 	public static Object stringToPersona(String r) {
 		StringTokenizer st = new StringTokenizer(r, " ");
 		Persona persona = null;
@@ -135,6 +147,12 @@ public class PersonaDAO {
 		return persona;
 	}
 	
+	/**
+	 * Método para obtener todos los camaremos de un determinado restaurante
+	 * @param idRestaurante
+	 * @return
+	 * @throws IOException
+	 */
 	public static ArrayList<Camarero> getCamareros(int idRestaurante) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetCamareros.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();

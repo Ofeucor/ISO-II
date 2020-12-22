@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/auxiliar/auxiliar.iml" filepath="$PROJECT_DIR$/auxiliar/auxiliar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/controlAlmacen/controlAlmacen.iml" filepath="$PROJECT_DIR$/controlAlmacen/controlAlmacen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/estadisticas/estadisticas.iml" filepath="$PROJECT_DIR$/estadisticas/estadisticas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gestionPagos/gestionPagos.iml" filepath="$PROJECT_DIR$/gestionPagos/gestionPagos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pedidoComandas/pedidoComandas.iml" filepath="$PROJECT_DIR$/pedidoComandas/pedidoComandas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reservaMesas/reservaMesas.iml" filepath="$PROJECT_DIR$/reservaMesas/reservaMesas.iml" />
+    </modules>
+  </component>
+</project>
