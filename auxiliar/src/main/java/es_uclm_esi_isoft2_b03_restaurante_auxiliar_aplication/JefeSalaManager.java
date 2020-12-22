@@ -80,10 +80,6 @@ public class JefeSalaManager extends AbstractPersonaManager{
 		return camarerosRestaurante;
 	}
 
-	/**
-	 * 
-	 * @param date
-	 */
 	public ArrayList<Reserva> getReservas(){
 		ArrayList<Reserva> reservas = null;
 		try {

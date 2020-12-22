@@ -9,12 +9,6 @@ public class Persona {
 	private String apellidos;
 	private int idRestaurante;
 
-	/**
-	 * @param dni
-	 * @param nombre
-	 * @param apellidos
-	 * @param idRestaurante
-	 */
 	public Persona(String dni, String nombre, String apellidos, int idRestaurante) {
 		this.dni = dni;
 		this.nombre = nombre;

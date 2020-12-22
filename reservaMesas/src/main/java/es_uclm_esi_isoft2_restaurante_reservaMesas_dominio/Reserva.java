@@ -7,12 +7,6 @@ public class Reserva {
 	private int id;
 	private Date fecha;
 	private String datosCliente;
-
-	/**
-	 * @param fecha
-	 * @param datosCliente
-	 * @param idRestaurante 
-	 */
 	
 	
 	public Reserva(Date fecha, String datosCliente) {

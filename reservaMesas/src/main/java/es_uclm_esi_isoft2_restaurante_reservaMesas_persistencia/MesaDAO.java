@@ -17,10 +17,6 @@ import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
 
 public class MesaDAO {
 
-	/**
-	 * 
-	 * @param idRestaurante
-	 */
 	public static ArrayList<Mesa> getMesas(int idRestaurante) throws IOException{
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetMesas.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -135,15 +131,6 @@ public class MesaDAO {
 
 	}
 	
-	
-
-	/**
-	 * @throws IOException 
-	 * @throws  
-	 * 
-	 * @param idRestaurante
-	 * @throws  
-	 */
 	/*public ArrayList<Mesa> getMesasReservadas(int idRestaurante) throws IOException{
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpGetMesasReservadas.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();

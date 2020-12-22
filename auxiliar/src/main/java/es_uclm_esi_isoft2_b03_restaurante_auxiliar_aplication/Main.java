@@ -1,17 +1,16 @@
 package es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Scanner;
 
 import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Camarero;
 import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.JefeSala;
-import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Mesa;
-import es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO;
 import es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO;
+
+/***
+ * Clase principal del programa
+ */
 
 public class Main {
 

@@ -16,12 +16,6 @@ import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
 
 public class ReservaDAO {
 
-	/**
-	 * 
-	 * @param reserva
-	 * @param idRestaurante
-	 * @throws IOException 
-	 */
 	//public ReservaDAO() {};
 	public static void insertReserva(Reserva reserva, int idRestaurante) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpInsertReserva.php");
@@ -57,11 +51,6 @@ public class ReservaDAO {
 		}
 	}
 
-	/**
-	 * 
-	 * @param idReserva
-	 * @throws IOException 
-	 */
 	
 	public void deleteReserva(int idReserva) {
 		// TODO - implement ReservaDAO.deleteReserva

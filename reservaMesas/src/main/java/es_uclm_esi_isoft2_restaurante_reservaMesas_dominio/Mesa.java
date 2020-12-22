@@ -35,7 +35,6 @@ public class Mesa {
 		this.estado = estado;
 	}
 
-	@Override
 	public String toString() {
 		return "Mesa [idMesa=" + idMesa + ", estado=" + estado + ", numSillas=" + numSillas + "]";
 	

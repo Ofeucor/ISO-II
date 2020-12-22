@@ -12,12 +12,6 @@ import java.util.StringTokenizer;
 import es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.*;
 
 public class PersonaDAO {
-
-	/**
-	 * 
-	 * @param dni
-	 * @param password
-	 */
 	
 	public static Object autenticarse(String dni, String password) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phplogin.php");
@@ -56,10 +50,6 @@ public class PersonaDAO {
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param persona
-	 */
 	public static void insertPersona(Persona persona) throws IOException {
 		URL obj = new URL("https://isoft2-2021-b03.000webhostapp.com/phpInsertEmpleado.php");
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -96,10 +86,6 @@ public class PersonaDAO {
 		}
 	}
 
-	/**
-	 * 
-	 * @param dni
-	 */
 	public void deletePersona(int dni) {
 		
 	}
