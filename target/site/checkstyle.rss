@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<rss version="0.91">
+  <channel>
+    <title>restaurante - Checkstyle report</title>
+    <link>http://maven.apache.org</link>
+    <description>restaurante - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2020</copyright>
+    <item>
+      <title>File: 30,
+             Errors: 1186,
+             Warnings: 0,
+             Infos: 0
+      </title>
+            <link>http://maven.apache.org/checkstyle.html</link>
+      <description>
+        <p>Click <a href="http://maven.apache.org/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication.JefeSalaManager.java">es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication/JefeSalaManager.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  58
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_pedidoComandas_persistencia.IngredienteDAO.java">es_uclm_esi_isoft2_restaurante_pedidoComandas_persistencia/IngredienteDAO.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  64
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#org.controlAlmacen.App.java">org/controlAlmacen/App.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  11
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication.AbstractPersonaManager.java">es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication/AbstractPersonaManager.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio.Restaurante.java">es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio/Restaurante.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_pedidoComandas_persistencia.ComandaDAO.java">es_uclm_esi_isoft2_restaurante_pedidoComandas_persistencia/ComandaDAO.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  45
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#org.gestionPagos.App.java">org/gestionPagos/App.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  11
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_pedidoComandas_dominio.Alimento.java">es_uclm_esi_isoft2_restaurante_pedidoComandas_dominio/Alimento.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  81
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.PersonaDAO.java">es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/PersonaDAO.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  62
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_pedidoComandas_dominio.Comanda.java">es_uclm_esi_isoft2_restaurante_pedidoComandas_dominio/Comanda.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  54
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Mesa.java">es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Mesa.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  35
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.JefeSala.java">es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/JefeSala.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  11
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#org.estadisticas.App.java">org/estadisticas/App.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  11
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.ReservaDAO.java">es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/ReservaDAO.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  57
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_reservaMesas_interfaz.Main.java">es_uclm_esi_isoft2_restaurante_reservaMesas_interfaz/Main.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  35
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#org.pedidoComandas.App.java">org/pedidoComandas/App.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication.CamareroManager.java">es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication/CamareroManager.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  94
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_pedidoComandas_persistencia.AlimentoDAO.java">es_uclm_esi_isoft2_restaurante_pedidoComandas_persistencia/AlimentoDAO.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  45
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#org.auxiliar.App.java">org/auxiliar/App.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio.DireccionCadena.java">es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio/DireccionCadena.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_b03_restaurante_estadisticas_persistencia.RegistroDAO.java">es_uclm_esi_isoft2_b03_restaurante_estadisticas_persistencia/RegistroDAO.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  14
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Persona.java">es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Persona.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  45
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Camarero.java">es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Camarero.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  18
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication.DireccionCadenaManager.java">es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication/DireccionCadenaManager.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  18
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Reserva.java">es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Reserva.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  32
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_pedidoComandas_dominio.Cocinero.java">es_uclm_esi_isoft2_restaurante_pedidoComandas_dominio/Cocinero.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  15
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication.Main.java">es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication/Main.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  130
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia.MesaDAO.java">es_uclm_esi_isoft2_restaurante_reservaMesas_persistencia/MesaDAO.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  134
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_b03_restaurante.App.java">es_uclm_esi_isoft2_b03_restaurante/App.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  12
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_pedidoComandas_dominio.Ingrediente.java">es_uclm_esi_isoft2_restaurante_pedidoComandas_dominio/Ingrediente.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  54
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+
