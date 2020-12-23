@@ -21,6 +21,10 @@ public class Main {
 
 	public final static Scanner sc = new Scanner(System.in);
 	
+	/**
+	 * Metodo principal del programa en el que la persona se autentica
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 
@@ -86,7 +90,10 @@ public class Main {
 		}
 
 	}
-	
+	/**
+	 * Acciones que tiene disponible la persona autenticada como JefeSala
+	 * @param j
+	 */
 	public static void jefeSalaActions(JefeSalaManager j) {
 		
 		do {
@@ -127,7 +134,10 @@ public class Main {
 			}
 		}while(true);
 	}
-	
+	/**
+	 * Acciones que tiene disponible la persona autenticada como JefeSala
+	 * @param c
+	 */
 	public static void camareroActions(CamareroManager c) {
 		do {
 			System.out.println("1.TomarComanda\n2.VerMenu");
@@ -183,7 +193,10 @@ public class Main {
 		}while(true);
 	}
 
-	
+	/**
+	 * Acciones que tiene disponible la persona autenticada como JefeSala
+	 * @param manager
+	 */
 	public static void camareroInicio(CamareroManager manager) {
 		int opt = -1;
 		do {
