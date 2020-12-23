@@ -234,5 +234,20 @@ public class CamareroManager extends AbstractPersonaManager {
 		// TODO - implement CocineroManager.cocinar
 		throw new UnsupportedOperationException();
 	}
+	public Comanda pedirCuenta() {
+		// TODO - implement CamareroManager.pedirCuenta
+		throw new UnsupportedOperationException();
+	}
+
+	public boolean marcarCuentaPagada() {
+		// TODO - implement CamareroManager.marcarCuentaPagada
+		throw new UnsupportedOperationException();
+	}
+
+	public boolean imprimirCuenta() {
+		// TODO - implement CamareroManager.imprimirCuenta
+		throw new UnsupportedOperationException();
+	}
+
 
 }

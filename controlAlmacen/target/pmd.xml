@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="5.6.1" timestamp="2020-12-23T13:09:44.530">
+<pmd version="5.6.1" timestamp="2020-12-23T13:20:20.580">
 <file name="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\controlAlmacen\src\main\java\es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio\Restaurante.java">
 <violation beginline="5" endline="5" begincolumn="21" endcolumn="33" rule="UnusedPrivateField" ruleset="Unused Code" package="es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio" class="Restaurante" variable="idRestaurante" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/unusedcode.html#UnusedPrivateField" priority="3">
 Avoid unused private fields such as 'idRestaurante'.
