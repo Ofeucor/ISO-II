@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2020</copyright>
     <item>
-      <title>File: 27,
-             Errors: 1148,
+      <title>File: 30,
+             Errors: 1186,
              Warnings: 0,
              Infos: 0
       </title>
@@ -69,7 +69,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  62
+                  64
                 </td>
               </tr>
                           <tr>
@@ -98,6 +98,20 @@ under the License.
                 </td>
                 <td>
                   9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio.Restaurante.java">es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio/Restaurante.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
                 </td>
               </tr>
                           <tr>
@@ -265,7 +279,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  89
+                  94
                 </td>
               </tr>
                           <tr>
@@ -294,6 +308,20 @@ under the License.
                 </td>
                 <td>
                   9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio.DireccionCadena.java">es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio/DireccionCadena.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
                 </td>
               </tr>
                           <tr>
@@ -327,6 +355,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.Camarero.java">es_uclm_esi_isoft2_restaurante_reservaMesas_dominio/Camarero.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  18
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication.DireccionCadenaManager.java">es_uclm_esi_isoft2_b03_restaurante_auxiliar_aplication/DireccionCadenaManager.java</a>
                 </td>
                 <td>
                   0

@@ -224,5 +224,15 @@ public class CamareroManager extends AbstractPersonaManager {
 	public void notifyCocinero() {
 		System.out.println("AVISANDO A COCINEROS Y CAMAREROS DE BARRA");
 	}
+	
+	public void cambiarEstadoComanda() {
+		// TODO - implement CocineroManager.cambiarEstadoComanda
+		throw new UnsupportedOperationException();
+	}
+
+	public void cocinar() {
+		// TODO - implement CocineroManager.cocinar
+		throw new UnsupportedOperationException();
+	}
 
 }
