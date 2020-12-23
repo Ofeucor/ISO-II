@@ -18,7 +18,7 @@ A continuación te mostramos una serie de enlaces donde puedes consultar toda la
   
   > Gestión de pruebas: [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/wiki/Gesti%C3%B3n-de-Pruebas)
   
-  > Gestión de mantenimiento: [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/wiki/Gesti%C3%B3n-de-Pruebas)
+  > Gestión de mantenimiento: [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/wiki/Gesti%C3%B3n-de-Mantenimiento)
   
   > Plan de Gestión y Desarrollo del proyecto: [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/wiki/Plan-de-Gesti%C3%B3n-y-Desarrollo-de-Proyecto)
   
