@@ -12,8 +12,6 @@ A continuación te mostramos una serie de enlaces donde puedes consultar toda la
 * Wiki (Completa): [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/wiki)
   > Home: [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/wiki/Acta-de-Constituci%C3%B3n)
 
-             *Proyecto Visual Paradigm : [Pincha aquí...](https://drive.google.com/file/d/1J3a2pQT3cL-lpX-YnEpEgejXO5Ifbnip/view?usp=sharing)
-
   > Acta de constitución: [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/wiki/Acta-de-Constituci%C3%B3n)
   
   > Actas de reuniones: [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/wiki/Actas)
