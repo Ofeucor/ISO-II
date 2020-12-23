@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.6.1" timestamp="2020-12-23T13:20:20.580">
+<file name="D:\Documentos\UNIVERSIDAD\Tercero (1º cuatrimestre)\Ingeniería del Software II\Prácticas\ISOFT2-2021-B03\controlAlmacen\src\main\java\es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio\Restaurante.java">
+<violation beginline="5" endline="5" begincolumn="21" endcolumn="33" rule="UnusedPrivateField" ruleset="Unused Code" package="es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio" class="Restaurante" variable="idRestaurante" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'idRestaurante'.
+</violation>
+<violation beginline="6" endline="6" begincolumn="23" endcolumn="41" rule="UnusedPrivateField" ruleset="Unused Code" package="es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio" class="Restaurante" variable="estadisticasComanda" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'estadisticasComanda'.
+</violation>
+<violation beginline="7" endline="7" begincolumn="23" endcolumn="45" rule="UnusedPrivateField" ruleset="Unused Code" package="es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio" class="Restaurante" variable="estadisticasPreparacion" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'estadisticasPreparacion'.
+</violation>
+<violation beginline="8" endline="8" begincolumn="23" endcolumn="40" rule="UnusedPrivateField" ruleset="Unused Code" package="es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio" class="Restaurante" variable="estadisticasCuenta" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'estadisticasCuenta'.
+</violation>
+<violation beginline="9" endline="9" begincolumn="23" endcolumn="40" rule="UnusedPrivateField" ruleset="Unused Code" package="es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio" class="Restaurante" variable="estadisticasCocina" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'estadisticasCocina'.
+</violation>
+<violation beginline="10" endline="10" begincolumn="24" endcolumn="29" rule="UnusedPrivateField" ruleset="Unused Code" package="es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio" class="Restaurante" variable="nombre" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'nombre'.
+</violation>
+<violation beginline="11" endline="11" begincolumn="24" endcolumn="33" rule="UnusedPrivateField" ruleset="Unused Code" package="es_uclm_esi_isoft2_restaurante_controlAlmacen_dominio" class="Restaurante" variable="direcccion" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'direcccion'.
+</violation>
+</file>
+</pmd>
