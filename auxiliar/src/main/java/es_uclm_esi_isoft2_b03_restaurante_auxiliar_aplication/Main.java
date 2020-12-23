@@ -22,20 +22,46 @@ public class Main {
 	public final static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		String dni, password;		
+		
 
 		
-		System.out.println("------AUTENTIFICAR------");
-		System.out.println("Dime tu DNI:");
-		dni = sc.next();
+		System.out.println("\r\n"
+				+ " _______                         __                                                         __               \r\n"
+				+ "/       \\                       /  |                                                       /  |              \r\n"
+				+ "$$$$$$$  |  ______    _______  _$$ |_     ______   __    __   ______   ______   _______   _$$ |_     ______  \r\n"
+				+ "$$ |__$$ | /      \\  /       |/ $$   |   /      \\ /  |  /  | /      \\ /      \\ /       \\ / $$   |   /      \\ \r\n"
+				+ "$$    $$< /$$$$$$  |/$$$$$$$/ $$$$$$/    $$$$$$  |$$ |  $$ |/$$$$$$  |$$$$$$  |$$$$$$$  |$$$$$$/   /$$$$$$  |\r\n"
+				+ "$$$$$$$  |$$    $$ |$$      \\   $$ | __  /    $$ |$$ |  $$ |$$ |  $$/ /    $$ |$$ |  $$ |  $$ | __ $$    $$ |\r\n"
+				+ "$$ |  $$ |$$$$$$$$/  $$$$$$  |  $$ |/  |/$$$$$$$ |$$ \\__$$ |$$ |     /$$$$$$$ |$$ |  $$ |  $$ |/  |$$$$$$$$/ \r\n"
+				+ "$$ |  $$ |$$       |/     $$/   $$  $$/ $$    $$ |$$    $$/ $$ |     $$    $$ |$$ |  $$ |  $$  $$/ $$       |\r\n"
+				+ "$$/   $$/  $$$$$$$/ $$$$$$$/     $$$$/   $$$$$$$/  $$$$$$/  $$/       $$$$$$$/ $$/   $$/    $$$$/   $$$$$$$/ \r\n"
+				+ "                                                                                                             \r\n"
+				+ "                                                                                                             \r\n"
+				+ "                                                                                                             \r\n"
+				+ "");
+		
+		System.out.println("\r\n"
+				+ "                  _                _    _                   \r\n"
+				+ "     /\\          | |              | |  (_)                  \r\n"
+				+ "    /  \\   _   _ | |_  ___  _ __  | |_  _   ___  __ _  _ __ \r\n"
+				+ "   / /\\ \\ | | | || __|/ _ \\| '_ \\ | __|| | / __|/ _` || '__|\r\n"
+				+ "  / ____ \\| |_| || |_|  __/| | | || |_ | || (__| (_| || |   \r\n"
+				+ " /_/    \\_\\\\__,_| \\__|\\___||_| |_| \\__||_| \\___|\\__,_||_|   \r\n"
+				+ "                                                            \r\n"
+				+ "                                                            \r\n"
+				+ "");
 
-		System.out.println("Dime tu contraseña:");
-		password = sc.next();
 		
 		Object o;
 		try {
 			
-			//[["Manuel","LopezMartin","00000001A","JefeSala","LopezMartin00000001A","1"]]
+			String dni, password;		
+			System.out.println("Dime tu DNI:");
+			dni = sc.next();
+
+			System.out.println("Dime tu contraseña:");
+			password = sc.next();
+			
 			o = PersonaDAO.autenticarse(dni, password);
 	
 			if(o.getClass().getName().equals("es_uclm_esi_isoft2_restaurante_reservaMesas_dominio.JefeSala")) {
@@ -47,24 +73,8 @@ public class Main {
 				Camarero p1 = (Camarero) o;
 				CamareroManager manager = new CamareroManager(p1);
 				manager.mesasAsignadas();
-				int opt = -1;
-				do {
-					System.out.println("1.Selecionar Mesa\n2.Ver Mesas Asignadas\n0.Cerrrarxexion");
-					opt = sc.nextInt();
-					switch(opt) {
-						case 0:
-							break;
-						case 1:
-							System.out.print("Indica Id Mesa:");
-							manager.setMesaAntendida(manager.getAsignadas().get(manager.getAsignadas().indexOf(new Mesa(sc.nextInt()))));
-							camareroActions(manager);
-							break;
-						case 2:
-							manager.mesasAsignadas();
-							break;
-					}
-					camareroActions(manager);
-				}while(opt != 0);
+				camareroInicio(manager);
+				
 			}else {
 				System.out.println("??");
 
@@ -74,7 +84,6 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//JefeSala js1 = (JefeSala)p1.autenticarPersona(dni, password);
 
 	}
 	
@@ -99,9 +108,13 @@ public class Main {
 				break;
 			case 4:
 				try {
-					//SimpleDateFormat formatter=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
-					//Date f = formatter.parse("31-Dec-2021 11:37:50");
-					j.realizarReserva(new Date(),"Cliente19");
+					String dni;		
+					System.out.println("Dime tu Nombre y el numero de comensales:");
+					dni = sc.next();
+
+					System.out.println("Dime fecha y hora con el siguiente formato yyyy-MM-dd HH:mm:ss");
+
+					j.realizarReserva(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(sc.next()),dni);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -124,11 +137,12 @@ public class Main {
 				break;
 			case 1:
 				try {
-				//int registroid = MesaDAO.atender(c.getMesaAntendida(), 5/*Comensales*/, c.getCamarero().getIdRestaurante(), c.getCamarero().getDni());
+				int registroid = MesaDAO.atender(c.getMesaAntendida(), 5/*Comensales*/, c.getCamarero().getIdRestaurante(), c.getCamarero().getDni());
 				List<Alimento> alimentos = new LinkedList<Alimento>();
 				int opt;
 				boolean ingredientesSuficientes;
 				ArrayList<Ingrediente> ingredientesComandas, ingredientes;
+				Comanda comanda;
 				
 				do {
 					System.out.println("Indica Plato");
@@ -137,7 +151,7 @@ public class Main {
 						System.out.println("Indica Plato...");
 					}
 					
-					Comanda comanda = new Comanda("2020/12/26", "1:56:23", new ArrayList<Alimento>(alimentos));
+					comanda = new Comanda("2020/12/26", "1:56:23", new ArrayList<Alimento>(alimentos));
 					ingredientes = new ArrayList<Ingrediente>();
 					for(Alimento a : comanda.getAlimentos())
 						ingredientes.addAll(IngredienteDAO.getIngredientes(a.getIdAlimento()));
@@ -155,8 +169,8 @@ public class Main {
 				}while(!ingredientesSuficientes);
 				
 
-				//c.cogerComanda(comanda);
-				//registroid = MesaDAO.finalizarAtender(c.getMesaAntendida(), 5/*Comensales*/, c.getCamarero().getIdRestaurante(), c.getCamarero().getDni(), registroid);
+				c.cogerComanda(comanda);
+				registroid = MesaDAO.finalizarAtender(c.getMesaAntendida(), 5/*Comensales*/, c.getCamarero().getIdRestaurante(), c.getCamarero().getDni(), registroid);
 				c.notifyCocinero();
 				}catch(Exception e) {
 					e.printStackTrace();
@@ -169,4 +183,26 @@ public class Main {
 		}while(true);
 	}
 
+	
+	public static void camareroInicio(CamareroManager manager) {
+		int opt = -1;
+		do {
+			System.out.println("1.Selecionar Mesa\n2.Ver Mesas Asignadas\n0.Cerrrarxexion");
+			opt = sc.nextInt();
+			switch(opt) {
+				case 0:
+					break;
+				case 1:
+					System.out.print("Indica Id Mesa:");
+					manager.setMesaAntendida(manager.getAsignadas().get(manager.getAsignadas().indexOf(new Mesa(sc.nextInt()))));
+					camareroActions(manager);
+					break;
+				case 2:
+					manager.mesasAsignadas();
+					break;
+			}
+			camareroActions(manager);
+		}while(opt != 0);
+	}
+	
 }

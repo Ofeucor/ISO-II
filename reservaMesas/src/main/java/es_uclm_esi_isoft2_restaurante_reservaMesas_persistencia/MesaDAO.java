@@ -151,7 +151,7 @@ public class MesaDAO {
 			}
 
 			in.close();
-			System.out.println(response.toString());
+			//System.out.println(response.toString());
 
 		} else {
 			System.out.println("Fallo al obtener la mesa con id: " + idMesa);
@@ -210,7 +210,7 @@ public class MesaDAO {
 		directConnection.flush();
 		directConnection.close();
 		int responseCode = con.getResponseCode();
-		System.out.println("POST Response Code :: " + responseCode);
+		//System.out.println("POST Response Code :: " + responseCode);
 		ArrayList<Mesa> mesas = new ArrayList<Mesa>();
 		if (responseCode == HttpURLConnection.HTTP_OK) { // success
 			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -222,7 +222,7 @@ public class MesaDAO {
 			}
 
 			in.close();
-			System.out.println(response.toString());
+			//System.out.println(response.toString());
 			StringTokenizer st = new StringTokenizer(response.toString(), "]");
 
 			if (!response.toString().equals("[]"))
@@ -257,7 +257,7 @@ public class MesaDAO {
 		directConnection.flush();
 		directConnection.close();
 		int responseCode = con.getResponseCode();
-		System.out.println("POST Response Code :: " + responseCode);
+		//System.out.println("POST Response Code :: " + responseCode);
 		ArrayList<Mesa> mesas = new ArrayList<Mesa>();
 		if (responseCode == HttpURLConnection.HTTP_OK) { // success
 			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -360,7 +360,7 @@ public class MesaDAO {
 		directConnection.close();
 
 		int responseCode = con.getResponseCode();
-		System.out.println("POST Response Code :: " + responseCode);
+		//System.out.println("POST Response Code :: " + responseCode);
 		if (responseCode == HttpURLConnection.HTTP_OK) { // success
 			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 			String inputLine;
@@ -372,7 +372,7 @@ public class MesaDAO {
 			in.close();
 
 			// print result
-			System.out.println(response.toString());
+			//System.out.println(response.toString());
 
 			return Integer.parseInt(response.toString().split(":")[1]);
 		} else {
@@ -400,7 +400,7 @@ public class MesaDAO {
 		directConnection.close();
 
 		int responseCode = con.getResponseCode();
-		System.out.println("POST Response Code :: " + responseCode);
+		//System.out.println("POST Response Code :: " + responseCode);
 		if (responseCode == HttpURLConnection.HTTP_OK) { // success
 			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 			String inputLine;
@@ -412,7 +412,7 @@ public class MesaDAO {
 			in.close();
 
 			// print result
-			System.out.println(response.toString());
+			//System.out.println(response.toString());
 
 			return Integer.parseInt(response.toString().split(":")[1]);
 		} else {

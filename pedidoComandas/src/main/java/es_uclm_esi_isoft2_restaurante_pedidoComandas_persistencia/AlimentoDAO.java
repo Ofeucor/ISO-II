@@ -41,7 +41,7 @@ public class AlimentoDAO {
 			in.close();
 
 			// print result
-			System.out.println(response.toString());
+			//System.out.println(response.toString());
 			StringTokenizer st = new StringTokenizer(response.toString(), "]");
 
 			if (!response.toString().equals("[]"))
@@ -78,7 +78,7 @@ public class AlimentoDAO {
 		directConnection.close();
 
 		int responseCode = con.getResponseCode();
-		System.out.println("POST Response Code :: " + responseCode);
+		//System.out.println("POST Response Code :: " + responseCode);
 		if (responseCode == HttpURLConnection.HTTP_OK) { // success
 			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 			String inputLine;
