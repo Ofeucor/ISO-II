@@ -10,10 +10,10 @@ public abstract class AbstractPersonaManager {
 	 * @param user
 	 * @param password
 	 */
-	public Persona autenticar(String user, String password) {
-		// TODO - implement AbstractPersonaManager.autenticar
-		throw new UnsupportedOperationException();
-	}
+//	public Persona autenticar(String user, String password) {
+//		// TODO - implement AbstractPersonaManager.autenticar
+//		throw new UnsupportedOperationException();
+//	}
 
 	/**
 	 * 
