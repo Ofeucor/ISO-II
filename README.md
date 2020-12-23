@@ -24,7 +24,8 @@ A continuación te mostramos una serie de enlaces donde puedes consultar toda la
   
   > Nuestro lado más sentimental: [Pincha aqui...](https://github.com/Ofeucor/ISOFT2-2021-B03/wiki/Autoevaluaci%C3%B3n-y-Experiencias-Personales)
   
-* Proyecto Visual Paradigm: [Pincha aquí...](https://drive.google.com/file/d/1J3a2pQT3cL-lpX-YnEpEgejXO5Ifbnip/view?usp=sharing)  
+* Proyecto Visual Paradigm: [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/wiki/Visual-Paradigm)  
+
 * Issues: [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/issues)
 
 * Estadísticas: [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/pulse)
