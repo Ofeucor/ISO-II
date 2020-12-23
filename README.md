@@ -4,14 +4,6 @@
 
 Presentamos este repositorio del grupo de prácticas B03 donde trabajamos de forma conjunta en el desarrollo de la Gestión de una cadena de restaurantes
 
-# Miembros #
-
-* Andrés González Díaz
-* David Gutiérrez Mariblanca
-* Javier Álvarez Páramo
-* Juan Muñoz Calvo
-* Sergio Martín-Delgado Gutiérrez
-* Julio Molina Díaz
 
 # Enlaces de interés #
 
@@ -34,3 +26,14 @@ A continuación te mostramos una serie de enlaces donde puedes consultar toda la
   
 * Issues: [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/issues)
 
+* Estadísticas: [Pincha aquí...](https://github.com/Ofeucor/ISOFT2-2021-B03/pulse)
+
+
+# Miembros #
+
+* Andrés González Díaz
+* David Gutiérrez Mariblanca
+* Javier Álvarez Páramo
+* Juan Muñoz Calvo
+* Sergio Martín-Delgado Gutiérrez
+* Julio Molina Díaz
