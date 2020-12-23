@@ -7,8 +7,8 @@ Presentamos este repositorio del grupo de prácticas B03 donde trabajamos de for
 # Miembros #
 
 * Andrés González Díaz
-* David Gutierrez Mariblanca
-* Javier Alvarez Paramo
+* David Gutiérrez Mariblanca
+* Javier Álvarez Páramo
 * Juan Muñoz Calvo
 * Sergio Martín-Delgado Gutiérrez
 * Julio Molina Díaz
